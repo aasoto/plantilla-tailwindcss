@@ -1,0 +1,57 @@
+/*----------------- CÓMO MOVERSE EN LA LINEA DE COMANDOS ----------------*/
+//ver todos los archivos del disco
+ls-l 
+//limpiar la consola
+clear
+//saber en que lugar estoy
+pwd
+//cambiar de disco
+cd G:
+//ver todo lo que hay dentro del disco y para ver las carpetas
+ls
+//cambiar de directorio anterior
+cd ..
+
+/*------------- COMANDOS BASICOS DE GIT ---------------*/
+//crear archivo de texto plano
+touch archivo.txt
+//ver todo lo que está dentro del archivo
+cat archivo.txt
+//ver lista de todos los comando que se han utilizado
+history
+//para ejecutar un comando que aparece en el historial de comandos !{número del comando en lista} ej:
+!324
+//borrar un archivo desde la consola (no se puede recuperar)
+rm archivo.txt
+
+/*------------- INICIAR SESIÓN EN GIT ----------------*/
+//poner nombre de usuario de git
+git config --global user.name "user1999"
+//poner el email de usuario de git
+git config --global user.email "user1999@gmail.com"
+
+/*------------ INICIALIZAR UN REPOSITORIO CON GIT ------------*/
+//iniciar un repositorio
+git init
+//mostrar el estatus de los archivos
+git status
+//para empezar a guardar los cambios en el repositorio
+git add archivo.txt
+git add .
+//quitar archivo que se encuentra agregado despues del add
+git rm --cached archivo.txt
+//agregar nuevo commit
+git commit -m "mensaje del commit"
+//ver el historial de commits
+git log
+//si existen muchos commits y no se puede llegar al final de la lista facilmente solo es presionar la letra q y el curso lleva al final
+q
+//cambiar de commit {donde el número al final es el código del commit subido}
+**cuando se cambia de commit se crear una rama temporal con todos los cambios guardados en ese commit**
+git checkout e49r8gr93fehdwfjerk4938f9efj3h498f
+//para regresar al último commit "git checkout {nombre de la rama}". ej:
+git checkout master
+//para ver todas las ramas existentes en el repositorio
+git branch
+//mostrar lo que se cambió de un commit a otro
+git show
