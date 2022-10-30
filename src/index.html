@@ -10,7 +10,7 @@
 </head>
 <body class="relative bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
   <!-- Navegación -->
-  <nav class="z-20 fixed top-0 md:top-7 w-full">
+  <nav class="z-20 fixed top-0 md:top-4 2xl:top-7 w-full">
     <div class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow shadow-gray-800 backdrop-blur-xl bg-white/50 dark:bg-slate-800 py-7">
       <div class="z-20 ml-7">
         <h1 class="font-semibold text-xl text-gray-800 dark:text-white">The Beauty Peagent Project</h1>
@@ -69,8 +69,10 @@
       <div class="absolute top-0 left-0 w-full h-full bg-black/30 dark:bg-slate-900/70"></div>
     </div>
   </section>
-  <section>
-    <div class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 backdrop-blur-none md:backdrop-blur-xl dark:backdrop-blur-none bg-white/50 dark:bg-slate-800 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-700 py-32 mb-96">
+  <!-- Cuerpo de la página -->
+  <section class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 backdrop-blur-none md:backdrop-blur-xl dark:backdrop-blur-none bg-white/50 dark:bg-slate-800 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-700 py-32 mb-96">
+    <!-- Sección de ganadoras actuales -->
+    <section>
       <div class="container mx-auto -mt-24 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
         <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Actuales ganadoras de los certamenes de belleza más importantes</h1>
       </div>
@@ -106,7 +108,89 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <!-- fin Sección de ganadoras actuales -->
+    <!-- Sección de noticias -->
+    <section class="my-8 px-12">
+      <div class="container mx-auto py-5 md:py-10 w-10/12 md:w-8/12">
+        <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Últimas noticias</h1>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-1.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, optio?</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ex minus, vitae commodi enim suscipit cupiditate praesentium odit quaerat at?</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-2.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, dolor.</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum illum facere numquam quibusdam eum ab fugiat quis animi quod!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer transition" src="images/noticias/image-3.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, mollitia?</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error saepe sit ullam. Quisquam sint illo fuga quod saepe ea illum.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-4.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, magnam?</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas illo nisi iusto, libero tempore odio dolore rerum rem voluptatum.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-5.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, cum.</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dolorum obcaecati! Ab natus deserunt, molestias cupiditate unde omnis labore facilis.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-6.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, eligendi.</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat rerum adipisci quas praesentium illo assumenda iure consequuntur numquam mollitia iste.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-7.jpeg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, architecto.</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit voluptatibus ut temporibus ratione ab porro delectus excepturi fuga nihil ipsa?</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
+          <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+            <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer" src="images/noticias/image-8.jpg" alt="">
+            <div class="px-4">
+              <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, veritatis.</h3>
+              <p class="text-base text-justify pb-4 cursor-pointer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos quae labore blanditiis harum distinctio incidunt veniam. Dignissimos, rerum voluptatem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
+  <!-- fin de Cuerpo de la página -->
 </body>
 </html>
