@@ -1,0 +1,30 @@
+/*--------------------- INSTALAR ALPINE.JS EN CARPETA VACIA ----------------*/
+//ejecutar comando para descargar las directivas de alpine.js
+npm install alpinejs
+//instalar laravel mix
+npm install laravel-mix --save-dev
+//crear archivo de webpack.mix.js
+touch webpack.mix.js (si el comando no funciona hacerlo manualmente)
+//pegar el siguiente código en el archivo de webpack.mix.js
+____________________________________________________
+// webpack.mix.js
+
+let mix = require('laravel-mix');
+
+mix.js('src/app.js', 'dist').setPublicPath('dist');
+____________________________________________________
+
+//crear archivo app.js en la carpeta src 'src/app.js'
+//pegar el siguiente código en el archivo app.js
+_____________________________________________________
+import Alpine from 'alpinejs'
+ 
+window.Alpine = Alpine
+ 
+Alpine.start()
+_____________________________________________________
+
+//ejecutar comando para completar la instalación
+npx mix
+//colocar la siguiente etiqueta en el archivo donde se va a utilizar alpine.js
+  <script defer src="../dist/app.js"></script>
