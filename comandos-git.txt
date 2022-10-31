@@ -17,7 +17,7 @@ cd ..
 touch archivo.txt
 //ver todo lo que está dentro del archivo
 cat archivo.txt
-//ver lista de todos los comando que se han utilizado
+//ver lista de todos los comandos que se han utilizado
 history
 //para ejecutar un comando que aparece en el historial de comandos !{número del comando en lista} ej:
 !324
@@ -35,7 +35,7 @@ git config --global user.email "user1999@gmail.com"
 git init
 //mostrar el estatus de los archivos
 git status
-//para empezar a guardar los cambios en el repositorio
+//para empezar a guardar los cambios en el repositorio, en profundidad quiere decir que estos cambios pasan a un estado llamado staging que una memoria donde quedan guardados antes de hacer el commit, todo lo que no esté en staging no se agregará al commit.
 git add archivo.txt
 git add .
 //quitar archivo que se encuentra agregado despues del add
@@ -44,6 +44,7 @@ git rm --cached archivo.txt
 git commit -m "mensaje del commit"
 //ver el historial de commits
 git log
+//para ver más commits se puede hacer con la tecla espacio
 //si existen muchos commits y no se puede llegar al final de la lista facilmente solo es presionar la letra q y el curso lleva al final
 q
 //cambiar de commit {donde el número al final es el código del commit subido}
@@ -55,3 +56,22 @@ git checkout master
 git branch
 //mostrar lo que se cambió de un commit a otro
 git show
+
+/*------------- SALIR DE VIM ------------*/
+//esta es la consola que se abre cuando no se le coloca un mensaje al commit de git.
+//puede utilizarse a proposito para escribir un commit de varias lineas.
+//para ingresar el mensaje se debe pulsar la letra i y luego empezar a escribir el mensaje del commit.
+esc i ("insertar")
+//salir forma 1
+esc : wq
+//salir forma 2
+esc shift zz
+
+/*-------------- DIFERENCIAS ENTRE COMMITS ----------*/
+//al momentos de ejecutar el comando es importante el orden de los commit primero el más antiguo y despues el más reciente (git diff "código del más antiguo" "código del más reciente").
+git diff f430fk4095kf 3920r9fjie03jf4093
+
+/*--------------- GIT RESET ----------------------*/
+//este comando sirve para borrar los commits hechos, muy util al momento de romper el código y regresar a un commit donde este código aún estaba funcionando. Borrar commits
+git reset 22ac43e246b43 --hard //borra todos los commits hechos despues del commit indicado y situa a la persona en el commit indicado.
+git reset 22ac43e246b43 --soft //borrar todos los commits despues del indicado pero deja los cambios hechos despues de ese commit en staging, es decir como si no se hubiese ejecutado el comando "git add"
