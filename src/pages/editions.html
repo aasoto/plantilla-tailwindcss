@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miss Universo 2014</title>
+  <script defer src="../../dist/app.js"></script>
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../node_modules/flag-icons/css/flag-icons.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer components{
+      .hamburger div:first-child{
+        @apply rotate-45 translate-y-[0.330rem]
+      }
+
+      .hamburger div:last-child{
+        @apply -rotate-45 -translate-y-[0.330rem]
+      }
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          fontFamily: {
+            'delmon-delicate': ['DelmonDelicate'],
+          },
+          screens: {
+            'iPhoneSE': '375px',
+            'iPhoneXR': '414px',
+            'iPhone12Pro': '390px',
+            'GalaxyFold': '280px',
+          },
+        },
+      }
+    }
+  </script>
+</head>
+<body class="relative bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
+  <div x-data="data()">
+    <!-- Navegación -->
+    <nav class="z-20 fixed top-0 md:top-4 2xl:top-7 w-full">
+      <div
+        class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-lg shadow-gray-800 dark:shadow-gray-400 backdrop-blur-xl bg-white/50 dark:bg-slate-800 py-7">
+        <div class="z-20 ml-7">
+          <div class="block dark:hidden">
+            <img class="w-[200px] h-[60px] -my-7" src="../images/logo-BPproject-horizontal-fuente.svg" alt="">
+          </div>
+          <div class="hidden dark:block">
+            <img class="w-[200px] h-[60px] -my-7" src="../images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+          </div>
+          <!-- <h1 class="font-semibold text-xl text-gray-800 dark:text-white">The Beauty Peagent Project</h1> -->
+        </div>
+        <!-- Botón responsive -->
+        <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
+        <label for="hamburger" class="peer-checked:hamburger block z-20 cursor-pointer md:hidden transition mr-7 rounded">
+          <div class="h-0.5 w-6 bg-gray-600 dark:bg-white transition"></div>
+          <div class="mt-2 h-0.5 w-6 bg-gray-600 dark:bg-white transition"></div>
+        </label>
+        <div
+          class="w-full mt-24 md:mt-0 rounded-md md:rounded-none shadow md:shadow-none shadow-gray-800 transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:translate-x-0 md:flex-row">
+          <div
+            class="flex flex-col md:flex-row md:items-center px-6 md:px-0 md:pt-0 mr-0 md:mr-7 bg-white/80 md:bg-transparent dark:bg-slate-800">
+            <div class="group">
+              <div
+                class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white cursor-pointer px-[26px]">
+                <span>Ediciones</span><i class="fa-solid fa-chevron-down ml-2"></i></div>
+              <div class="md:absolute">
+                <div
+                  class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-10 p-0 md:p-4 rounded-none md:rounded-md transition">
+                  <ul class="text-center border-t-2 border-b-2 border-rose-600 dark:border-rose-300">
+                    <a href="#">
+                      <li
+                        class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
+                        Miss Universo</li>
+                    </a>
+                    <li
+                      class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
+                      Miss Mundo</li>
+                    <li
+                      class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
+                      Miss Grand International</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a href=""
+              class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white">Noticias</a>
+            <div class="group">
+              <div
+                class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white cursor-pointer px-[26px]">
+                <span>Cuenta</span><i class="fa-solid fa-chevron-down ml-2"></i></div>
+              <div class="md:absolute">
+                <div
+                  class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-10 px-0 md:px-7 py-0 md:py-4 rounded-none md:rounded-md transition">
+                  <ul class="text-center border-t-2 border-b-2 border-rose-600 dark:border-rose-300">
+                    <li
+                      class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
+                      Iniciar sesión</li>
+                    <li
+                      class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
+                      Crear cuenta</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- End of navegación -->
+    <!-- Background -->
+    <section class="mt-16 sm:mt-[86px] md:mt-0">
+      <div class="relative">
+        <img class="-z-10 w-full max-h-[500px] object-cover object-center" src="images/background.jpg" alt="">
+        <div class="absolute top-0 left-0 w-full h-full dark:bg-slate-900/70"></div>
+      </div>
+    </section>
+    <!-- End of Background -->
+    <!-- Cuerpo de la página -->
+    <section class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 backdrop-blur-none md:backdrop-blur-xl dark:backdrop-blur-none bg-white/50 dark:bg-slate-800 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 py-32">
+      <!-- Resumen -->
+      <section>
+        <div class="flex flex-col md:flex-row">
+          <div class="basis-2/3 border-r-0 md:border-r border-gray-500">
+            <div class="container mx-auto -mt-24 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
+              <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Miss universo 2014</h1>
+              <h2 class="text-xl md:text-2xl mb-4 font-medium text-center text-rose-700 dark:text-rose-300">63va edición del certamen de belleza de Miss Universo</h2>
+            </div>
+            <div class="mx-8">
+              <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+                La 63.ª edición de Miss Universo, correspondiente al año 2014 se llevó a cabo en el 25 de enero de 2015 en la Arena de la Universidad Internacional de Florida, en la ciudad de University Park, Estados Unidos. Candidatas de 88 naciones y territorios autónomos concursaron por el título en el certamen. Al final del evento, Gabriela Isler, Miss Universo 2013, de Venezuela coronó a Paulina Vega de Colombia como su sucesora. A pesar de que la fecha corresponde a 2015, la ganadora recibió el título de Miss Universo 2014.
+              </p>
+              <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+                La noche final del concurso fue transmitida por la NBC y con difusión simultánea en Telemundo; siendo un evento de tres horas de duración. Fue conducido por Thomas Roberts, quien ya condujo el certamen en 2013, y Natalie Morales, quien lo hizo en 2010 y 2011; además de los comentarios tras bambalinas de la personalidad televisiva y estilista norteamericana Jeannie Mai. Los artistas que amenizaron la velada fueron los cantantes estadounidenses Prince Royce, Nick Jonas y Gavin DeGraw.
+              </p>
+            </div>
+            <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Resultados</h2>
+            <div class="flex flex-col justify-center items-center my-8">
+              <div class="relative w-72 h-72">
+                <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/winner.jpg" alt="">
+                <span class="absolute bottom-7 left-7"><i class="fi fi-co fis rounded-full scale-[5]"></i></span>
+              </div>
+              <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                Miss Universo 2014
+              </p>
+              <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                Paulina Vega Dieppa
+              </p>
+              <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                Colombia
+              </p>
+            </div>
+            <div class="border-b border-gray-400 mx-10"></div>
+            <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Finalistas</h2>
+            <div class="flex flex-col xl:flex-row gap-2 justify-center items-center my-8">
+              <div class="flex flex-row gap-2 my-3">
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/1-runner-up.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-us fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Primera finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Nia Sanchez
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    U.S.A
+                  </p>
+                </div>
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/2-runner-up.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-ua fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Segunda finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Diana Harkusha
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Ucrania
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 my-3">
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/3-runner-up.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-nl fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Tercera finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Yasmin Verheijen
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Paises Bajos
+                  </p>
+                </div>
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/4-runner-up.jpeg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-jm fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Cuarta finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Kaci Fennell
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Jamaica
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="border-b border-gray-400 mx-10"></div>
+            <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Semifinalistas (Top 10)</h2>
+            <div class="flex flex-col gap-2 justify-center items-center my-8">
+              <div class="flex flex-col lg:flex-row gap-2 my-3">
+                <div class="basis-2/3 flex flex-row gap-2">
+                  <div class="basis-1/2 flex flex-col justify-center items-center">
+                    <div class="relative w-48 h-48">
+                      <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/1-semifinalist.jpg" alt="">
+                      <span class="absolute bottom-5 left-5"><i class="fi fi-ar fis rounded-full scale-[3]"></i></span>
+                    </div>
+                    <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Semi-finalista
+                    </p>
+                    <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Valentina Ferrer
+                    </p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Argentina
+                    </p>
+                  </div>
+                  <div class="basis-1/2 flex flex-col justify-center items-center">
+                    <div class="relative w-48 h-48">
+                      <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/2-semifinalist.jpg" alt="">
+                      <span class="absolute bottom-5 left-5"><i class="fi fi-au fis rounded-full scale-[3]"></i></span>
+                    </div>
+                    <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Semi-finalista
+                    </p>
+                    <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Tegan Martin
+                    </p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Australia
+                    </p>
+                  </div>
+                </div>
+                <div class="basis-1/3 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/3-semifinalist.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-es fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Semi-finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Desiré Cordero
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    España
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 my-3">
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/4-semifinalist.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-ph fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Semi-finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Mary Jean Lastimosa
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Filipinas
+                  </p>
+                </div>
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/5-semifinalist.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-ve fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Semi-finalista
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Migbelis Castellanos
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Venezuela
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="border-b border-gray-400 mx-10"></div>
+            <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Cuatrofinalistas (Top 15)</h2>
+            <div class="flex flex-col gap-2 justify-center items-center my-8">
+              <div class="flex flex-col lg:flex-row gap-2 my-3">
+                <div class="basis-2/3 flex flex-row gap-2">
+                  <div class="basis-1/2 flex flex-col justify-center items-center">
+                    <div class="relative w-48 h-48">
+                      <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/1-top-15.jpg" alt="">
+                      <span class="absolute bottom-5 left-5"><i class="fi fi-br fis rounded-full scale-[3]"></i></span>
+                    </div>
+                    <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Top 15
+                    </p>
+                    <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Melissa Gurgel
+                    </p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Brasil
+                    </p>
+                  </div>
+                  <div class="basis-1/2 flex flex-col justify-center items-center">
+                    <div class="relative w-48 h-48">
+                      <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/2-top-15.jpg" alt="">
+                      <span class="absolute bottom-5 left-5"><i class="fi fi-fr fis rounded-full scale-[3]"></i></span>
+                    </div>
+                    <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Top 15
+                    </p>
+                    <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Camille Cerf
+                    </p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Francia
+                    </p>
+                  </div>
+                </div>
+                <div class="basis-1/3 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/3-top-15.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-in fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Top 15
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Noyonita Lodh
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    India
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 my-3">
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/4-top-15.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-id fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Top 15
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Elvira Devinamira
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Indonesia
+                  </p>
+                </div>
+                <div class="basis-1/2 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/clasificadas/5-top-15.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-it fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Top 15
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Valentina Bonariva
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Italia
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basis-1/3">
+            <div class="container mx-auto -mt-0 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
+              <img @click="open_owner()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/trump-day.svg" alt="">
+              <img @click="open_owner()" class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/trump-dark.svg" alt="">
+            </div>
+            <div class="mx-auto py-5 w-10/12 md:w-8/12">
+              <div class="flex flex-row gap-3">
+                <div class="container basis-1/2 flex items-center">
+                  <img @click="open_broadcaster()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/nbc-day.svg" alt="">
+                  <img @click="open_broadcaster()" class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/nbc-dark.svg" alt="">
+                </div>
+                <div class="container basis-1/2 flex items-center">
+                  <img class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200" src="images/telemundo-day.svg" alt="">
+                  <img class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200" src="images/telemundo-dark.svg" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="mx-6">
+              <div class="border-t border-gray-400 mx-10"></div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Sede final</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <p class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                    FIU Arena, Miami, Florida, <span><i class="fi fi-us"></i></span> Estados Unidos
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Sede operativa</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <p class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Doral, Florida, <span><i class="fi fi-us"></i></span> Estados Unidos
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Fecha</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <p class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                    25 de enero de 2015
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Presentadores</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <ul class="list-disc list-inside">
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-us"></i></span> Thomas Roberts
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-us"></i></span> Natalie Morales
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-us"></i></span> Jeannie Mai
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ph"></i></span> Ariella Arida
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Número de participantes</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <p class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                    88
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Clasificación</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <p class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                    15
+                  </p>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Retiros</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <ul class="list-disc list-inside">
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-az"></i></span> Azerbaiyán
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-bw"></i></span> Botsuana
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-dk"></i></span> Dinamarca
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ee"></i></span> Estonia
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-na"></i></span> Namibia
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ro"></i></span> Rumania
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-vn"></i></span> Vietnam
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Regresos</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <ul class="list-disc list-inside">
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-al"></i></span> Albania
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-eg"></i></span> Egipto
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ge"></i></span> Georgia
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ie"></i></span> Irlanda
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ke"></i></span> Kenia
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-ro"></i></span> Kosovo
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-vn"></i></span> Portugal
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-xk"></i></span> Santa Lucía
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-uy"></i></span> Uruguay
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="my-8">
+                <h4 class="mb-5 text-base font-bold text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">Logo oficial de la edición</h4>
+                <img class="rounded-lg" src="images/logo-edition.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Resumen -->
+    </section>
+    <!-- End of Cuerpo de página -->
+    <!-- Modals -->
+    <div x-show="show_info_owner">
+      <div @click="close_owner()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
+      </div>
+      <div class="flex justify-center">
+        <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white dark:bg-slate-800 dark:shadow-lg dark:shadow-gray-400 rounded-lg">
+          <div class="flex w-full h-1/6 border-b border-gray-400">
+            <div class="w-10/12 md:w-11/12 pl-7 flex items-center text-gray-800 dark:text-white text-xl font-bold">The Trump organization</div>
+            <div class="w-2/12 md:w-1/12 flex justify-center items-center">
+              <i @click="close_owner()" class="fa-solid fa-xmark text-gray-800 dark:text-white hover:text-white hover:bg-red-500 hover:rounded-full hover:py-1 hover:px-2 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="container w-full h-5/6 py-8 px-8 md:px-16 text-base font-normal text-gray-800 dark:text-white overflow-auto text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+            <img class="block dark:hidden px-48 mb-10" src="images/trump-day.svg" alt="">
+            <img class="hidden dark:block px-48 mb-10" src="images/trump-dark.svg" alt="">
+            The Trump Organization (en español: La Organización Trump) es una empresa estadounidense, con sede en Manhattan, Nueva York. Se dedica a la gestión de propiedades y hoteles en diferentes países del mundo, así como al desarrollo de diversos proyectos de construcción y bienes inmuebles. Su director ejecutivo era Donald Trump pero fue destituido quien también es accionista mayoritario y fue Presidente de los Estados Unidos entre 2017 y 2021.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div x-show="show_info_broadcaster">
+      <div @click="close_broadcaster()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
+      </div>
+      <div class="flex justify-center">
+        <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white dark:bg-slate-800 dark:shadow-lg dark:shadow-gray-400 rounded-lg">
+          <div class="flex w-full h-1/6 border-b border-gray-400">
+            <div class="w-10/12 md:w-11/12 pl-7 flex items-center text-gray-800 dark:text-white text-xl font-bold">National Broadcasting Company - NBC</div>
+            <div class="w-2/12 md:w-1/12 flex justify-center items-center">
+              <i @click="close_broadcaster()" class="fa-solid fa-xmark text-gray-800 dark:text-white hover:text-white hover:bg-red-500 hover:rounded-full hover:py-1 hover:px-2 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="container w-full h-5/6 py-8 px-8 md:px-16 overflow-auto">
+            <div class="flex justify-center">
+              <img class="block dark:hidden px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="images/nbc-day.svg" alt="">
+              <img class="hidden dark:block px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="images/nbc-dark.svg" alt="">
+            </div>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              National Broadcasting Company (NBC, pronunciación en inglés: /'en.bi.si/; traducido al español como Compañía Nacional de Radiodifusión) es una cadena de televisión —y anteriormente, también de radio— comercial de origen estadounidense, con sede en el 30 Rockefeller Plaza en el Rockefeller Center de la ciudad de Nueva York y otras oficinas principales en Los Ángeles y Chicago. La cadena es una de las más grandes en todo el territorio estadounidense y, a veces, se le denomina como la Peacock Network (lit. «Cadena del Pavo Real») debido a su logotipo estilizado, que se asemeja a un pavo real. Su primera versión fue creada originalmente para promocionar las emisiones en color de la cadena.
+            </p>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              Formada en 1926 por la Radio Corporation of America (RCA), la NBC es la más antigua cadena de radiodifusión importante en los Estados Unidos. En 1986, el control de la NBC pasó a la General Electric Company (GE), cuando ésta compró RCA por 6,4 mil millones de dólares estadounidenses. Anteriormente, y hasta 1930, GE había sido el propietario tanto de RCA como de la NBC, hasta que se vio obligada a vender la empresa como resultado de cargos antimonopolio.
+            </p>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              Después de dicha adquisición en 1986, Bob Wright fue nombrado director ejecutivo de la cadena hasta su jubilación, dando posteriormente su posición a Jeff Zucker. La cadena es actualmente una división de la empresa de medios NBCUniversal, una filial de Comcast; anteriormente formó parte de un joint venture con General Electric, desde 2011 hasta 2013,1​ y antes aún estuvo bajo propiedad conjunta de GE y Vivendi. Como resultado de la fusión, Zucker dejó la NBC y fue reemplazado por Steve Burke, ejecutivo de Comcast.
+            </p>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              La NBC es productora de una multitud de programas de televisión, propietaria de 13 estaciones de televisión y afiliada a alrededor de otras 200 en los Estados Unidos y sus territorios, y es la empresa matriz de varias cadenas de televisión por cable y por satélite e inversiones en activades de Internet y de otras formas de multimedia. La NBC es también responsable de la emisión de los Premios Globo de Oro, la segunda ceremonia más importante en la industria del cine. Gran parte del archivo de emisiones de las emisoras de su propiedad se encuentra disponible para lectura y compra a través de los «NBCUniversal Archives».
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of Modals -->
+  </div>
+</body>
+<script>
+  function data(){
+    return {
+      show_info_owner: false,
+      open_owner() {
+        this.show_info_owner = true;
+      },
+      close_owner() {
+        this.show_info_owner = false;
+      },
+      show_info_broadcaster: false,
+      open_broadcaster() {
+        this.show_info_broadcaster = true;
+      },
+      close_broadcaster() {
+        this.show_info_broadcaster = false;
+      }
+    }
+  }
+</script>
+</html>
