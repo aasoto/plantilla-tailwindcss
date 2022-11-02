@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miss Universo 2014</title>
   <script defer src="../../dist/app.js"></script>
+  <!-- <link rel="stylesheet" href="../../dist/output.css"> -->
   <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link rel="stylesheet" href="../../node_modules/flag-icons/css/flag-icons.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -125,10 +126,11 @@
     <!-- End of Background -->
     <!-- Cuerpo de la página -->
     <section class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 backdrop-blur-none md:backdrop-blur-xl dark:backdrop-blur-none bg-white/50 dark:bg-slate-800 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 py-32">
-      <!-- Resumen -->
+      <!-- Infomración general y resultados -->
       <section>
         <div class="flex flex-col md:flex-row">
-          <div class="basis-2/3 border-r-0 md:border-r border-gray-500">
+          <!-- Resumen -->
+          <div class="basis-2/3 border-r-0 md:border-r border-gray-400">
             <div class="container mx-auto -mt-24 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
               <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Miss universo 2014</h1>
               <h2 class="text-xl md:text-2xl mb-4 font-medium text-center text-rose-700 dark:text-rose-300">63va edición del certamen de belleza de Miss Universo</h2>
@@ -395,21 +397,79 @@
                 </div>
               </div>
             </div>
+            <div class="border-b border-gray-400 mx-10"></div>
+            <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Premios especiales</h2>
+            <div class="flex flex-col gap-2 justify-center items-center my-8">
+              <div class="flex flex-col lg:flex-row gap-2 my-3">
+                <div class="basis-2/3 flex flex-row gap-2">
+                  <div class="basis-1/2 flex flex-col justify-center items-center">
+                    <div class="relative w-48 h-48">
+                      <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/premios especiales/miss-congeniality.jpg" alt="">
+                      <span class="absolute bottom-5 left-5"><i class="fi fi-ng fis rounded-full scale-[3]"></i></span>
+                    </div>
+                    <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Miss Simpatía
+                    </p>
+                    <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Queen Celestine
+                    </p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Nigeria
+                    </p>
+                  </div>
+                  <div class="basis-1/2 flex flex-col justify-center items-center">
+                    <div class="relative w-48 h-48">
+                      <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/premios especiales/best-national-costume.jpg" alt="">
+                      <span class="absolute bottom-5 left-5"><i class="fi fi-id fis rounded-full scale-[3]"></i></span>
+                    </div>
+                    <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Mejor traje tipico
+                    </p>
+                    <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Elvira Devinamira
+                    </p>
+                    <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                      Indonesia
+                    </p>
+                  </div>
+                </div>
+                <div class="basis-1/3 flex flex-col justify-center items-center">
+                  <div class="relative w-48 h-48">
+                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" src="images/premios especiales/miss-photogenic.jpg" alt="">
+                    <span class="absolute bottom-5 left-5"><i class="fi fi-pr fis rounded-full scale-[3]"></i></span>
+                  </div>
+                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Miss fotogenica
+                  </p>
+                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Gabriela Berrios
+                  </p>
+                  <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
+                    Puerto Rico
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- End of Resumen -->
           <div class="basis-1/3">
             <div class="container mx-auto -mt-0 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
+              <div class="block md:hidden border-b border-gray-400 mx-5"></div>
+              <h2 class="block md:hidden text-xl my-4 font-bold text-center text-rose-700 dark:text-rose-300">Propietario</h2>
               <img @click="open_owner()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/trump-day.svg" alt="">
               <img @click="open_owner()" class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/trump-dark.svg" alt="">
             </div>
             <div class="mx-auto py-5 w-10/12 md:w-8/12">
+              <div class="block md:hidden border-b border-gray-400 mx-5"></div>
+              <h2 class="block md:hidden text-xl my-4 font-bold text-center text-rose-700 dark:text-rose-300">Canales de televisión</h2>
               <div class="flex flex-row gap-3">
                 <div class="container basis-1/2 flex items-center">
                   <img @click="open_broadcaster()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/nbc-day.svg" alt="">
                   <img @click="open_broadcaster()" class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/nbc-dark.svg" alt="">
                 </div>
                 <div class="container basis-1/2 flex items-center">
-                  <img class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200" src="images/telemundo-day.svg" alt="">
-                  <img class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200" src="images/telemundo-dark.svg" alt="">
+                  <img @click="open_broadcaster_2()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/telemundo-day.svg" alt="">
+                  <img @click="open_broadcaster_2()" class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" src="images/telemundo-dark.svg" alt="">
                 </div>
               </div>
             </div>
@@ -450,7 +510,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Presentadores</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc list-inside">
+                  <ul class="list-disc md:list-none xl:list-disc list-inside">
                     <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                       <span><i class="fi fi-us"></i></span> Thomas Roberts
                     </li>
@@ -462,6 +522,24 @@
                     </li>
                     <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                       <span><i class="fi fi-ph"></i></span> Ariella Arida
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2 mt-4 mx-5">
+                <div class="container basis-1/2">
+                  <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Entretenimiento</h4>
+                </div>
+                <div class="container basis-1/2">
+                  <ul class="list-disc md:list-none xl:list-disc list-inside">
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-us"></i></span> Prince Royce
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-us"></i></span> Nick Jonas
+                    </li>
+                    <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
+                      <span><i class="fi fi-us"></i></span> Gavin DeGraw
                     </li>
                   </ul>
                 </div>
@@ -491,7 +569,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Retiros</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc list-inside">
+                  <ul class="list-disc md:list-none xl:list-disc list-inside">
                     <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                       <span><i class="fi fi-az"></i></span> Azerbaiyán
                     </li>
@@ -521,7 +599,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Regresos</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc list-inside">
+                  <ul class="list-disc md:list-none xl:list-disc list-inside">
                     <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                       <span><i class="fi fi-al"></i></span> Albania
                     </li>
@@ -560,7 +638,268 @@
           </div>
         </div>
       </section>
-      <!-- End of Resumen -->
+      <!-- Infomración general y resultados -->
+      <div class="border-b border-gray-400 mx-10 my-6"></div>
+      <!-- Candidatas -->
+      <section>
+        <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Concursantes</h2>
+        <div class="flex justify-center items-center ">
+          <table class="container mx-5 md:mx-10 w-full">
+            <thead class="sticky top-20 md:top-28 z-[70] w-full bg-gray-300 rounded-full text-gray-800">
+              <tr class="text-center w-full">
+                <th class="w-2/6 py-3">País</th>
+                <th class="w-2/6 py-3">Concursante</th>
+                <th class="w-1/6 py-3">Edad</th>
+                <th class="w-1/6 py-3">Ciudad</th>
+              </tr>
+            </thead>
+            <tbody class="w-full">
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-al fis rounded-full scale-125"></i></span> Albania</td>
+                <td class="w-2/6 px-2 py-3 italic">Zhaneta Byberi</td>
+                <td class="w-1/6 px-2 py-3">19</td>
+                <td class="w-1/6 px-2 py-3">Tirana</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-ao fis rounded-full scale-125"></i></span> Angola</td>
+                <td class="w-2/6 px-2 py-3 italic">Zuleica Wilson</td>
+                <td class="w-1/6 px-2 py-3">21</td>
+                <td class="w-1/6 px-2 py-3">Cabinda</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-ar fis rounded-full scale-125"></i></span> Argentina</td>
+                <td class="w-2/6 px-2 py-3 italic">Valentina Ferrer</td>
+                <td class="w-1/6 px-2 py-3">22</td>
+                <td class="w-1/6 px-2 py-3">Cordoba</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-aw fis rounded-full scale-125"></i></span> Aruba</td>
+                <td class="w-2/6 px-2 py-3 italic">Digene Zimmerman</td>
+                <td class="w-1/6 px-2 py-3">21</td>
+                <td class="w-1/6 px-2 py-3">Oranjestad</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-au fis rounded-full scale-125"></i></span> Australia</td>
+                <td class="w-2/6 px-2 py-3 italic">Tegan Martin</td>
+                <td class="w-1/6 px-2 py-3">23</td>
+                <td class="w-1/6 px-2 py-3">Newcastle</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-at fis rounded-full scale-125"></i></span> Austria</td>
+                <td class="w-2/6 px-2 py-3 italic">Julia Furdea</td>
+                <td class="w-1/6 px-2 py-3">20</td>
+                <td class="w-1/6 px-2 py-3">Vienna</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-bs fis rounded-full scale-125"></i></span> Bahamas</td>
+                <td class="w-2/6 px-2 py-3 italic">Tomii Culmer</td>
+                <td class="w-1/6 px-2 py-3">24</td>
+                <td class="w-1/6 px-2 py-3">Nassau</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-be fis rounded-full scale-125"></i></span> Belgium</td>
+                <td class="w-2/6 px-2 py-3 italic">Anissa Blondin</td>
+                <td class="w-1/6 px-2 py-3">22</td>
+                <td class="w-1/6 px-2 py-3">Brussels</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-bo fis rounded-full scale-125"></i></span> Bolivia</td>
+                <td class="w-2/6 px-2 py-3 italic">Claudia Tavel</td>
+                <td class="w-1/6 px-2 py-3">25</td>
+                <td class="w-1/6 px-2 py-3">Santa Cruz</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-br fis rounded-full scale-125"></i></span> Brazil</td>
+                <td class="w-2/6 px-2 py-3 italic">Melissa Gurgel</td>
+                <td class="w-1/6 px-2 py-3">20</td>
+                <td class="w-1/6 px-2 py-3">Fortaleza</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-vg fis rounded-full scale-125"></i></span> British Virgin Islands</td>
+                <td class="w-2/6 px-2 py-3 italic">Jaynene Jno Lewis</td>
+                <td class="w-1/6 px-2 py-3">26</td>
+                <td class="w-1/6 px-2 py-3">Tortola</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-bg fis rounded-full scale-125"></i></span> Bulgaria</td>
+                <td class="w-2/6 px-2 py-3 italic">Kristina Georgieva</td>
+                <td class="w-1/6 px-2 py-3">23</td>
+                <td class="w-1/6 px-2 py-3">Sofia</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-ca fis rounded-full scale-125"></i></span> Canada</td>
+                <td class="w-2/6 px-2 py-3 italic">Chanel Beckenlehner</td>
+                <td class="w-1/6 px-2 py-3">27</td>
+                <td class="w-1/6 px-2 py-3">Caledon</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-cl fis rounded-full scale-125"></i></span> Chile</td>
+                <td class="w-2/6 px-2 py-3 italic">Helle Toncio</td>
+                <td class="w-1/6 px-2 py-3">20</td>
+                <td class="w-1/6 px-2 py-3">Santiago</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-cn fis rounded-full scale-125"></i></span> China</td>
+                <td class="w-2/6 px-2 py-3 italic">Hu Yanliang</td>
+                <td class="w-1/6 px-2 py-3">24</td>
+                <td class="w-1/6 px-2 py-3">Beijing</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-co fis rounded-full scale-125"></i></span> Colombia</td>
+                <td class="w-2/6 px-2 py-3 italic font-bold">Paulina Vega</td>
+                <td class="w-1/6 px-2 py-3">22</td>
+                <td class="w-1/6 px-2 py-3">Barranquilla</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-cr fis rounded-full scale-125"></i></span> Costa Rica</td>
+                <td class="w-2/6 px-2 py-3 italic">Karina Ramos</td>
+                <td class="w-1/6 px-2 py-3">21</td>
+                <td class="w-1/6 px-2 py-3">San José</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-hr fis rounded-full scale-125"></i></span> Croatia</td>
+                <td class="w-2/6 px-2 py-3 italic">Ivana Mišura</td>
+                <td class="w-1/6 px-2 py-3">26</td>
+                <td class="w-1/6 px-2 py-3">Zagreb</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-cw fis rounded-full scale-125"></i></span> Curaçao</td>
+                <td class="w-2/6 px-2 py-3 italic">Laurien Angelista</td>
+                <td class="w-1/6 px-2 py-3">27</td>
+                <td class="w-1/6 px-2 py-3">Willemstad</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-cz fis rounded-full scale-125"></i></span> Czech Republic</td>
+                <td class="w-2/6 px-2 py-3 italic">Gabriela Franková</td>
+                <td class="w-1/6 px-2 py-3">21</td>
+                <td class="w-1/6 px-2 py-3">Prague</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-do fis rounded-full scale-125"></i></span> Dominican Republic</td>
+                <td class="w-2/6 px-2 py-3 italic">Kimberly Castillo</td>
+                <td class="w-1/6 px-2 py-3">26</td>
+                <td class="w-1/6 px-2 py-3">Higüey</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-ec fis rounded-full scale-125"></i></span> Ecuador</td>
+                <td class="w-2/6 px-2 py-3 italic">Alejandra Argudo</td>
+                <td class="w-1/6 px-2 py-3">22</td>
+                <td class="w-1/6 px-2 py-3">Portoviejo</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-eg fis rounded-full scale-125"></i></span> Egypt</td>
+                <td class="w-2/6 px-2 py-3 italic">Lara Debbana</td>
+                <td class="w-1/6 px-2 py-3">21</td>
+                <td class="w-1/6 px-2 py-3">Cairo</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-sv fis rounded-full scale-125"></i></span> El Salvador</td>
+                <td class="w-2/6 px-2 py-3 italic">Patricia Murillo</td>
+                <td class="w-1/6 px-2 py-3">22</td>
+                <td class="w-1/6 px-2 py-3">San Salvador</td>
+              </tr>
+              <tr class="w-full border-b border-gray-300">
+                <td class="w-2/6 px-2 py-3 font-bold"><span><i class="fi fi-et fis rounded-full scale-125"></i></span> Ethiopia</td>
+                <td class="w-2/6 px-2 py-3 italic">Hiwot Mamo</td>
+                <td class="w-1/6 px-2 py-3">24</td>
+                <td class="w-1/6 px-2 py-3">Addis Abada</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!--End of Candidatas -->
+      <div class="sticky top-20 md:top-28 z-[70] w-full"></div>
+      <!-- Contenido -->
+      <section class="mx-10">
+        <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Concursantes</h2>
+        <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+          La noche final fue transmitida en vivo a más de 190 países y territorios desde la Arena de la Universidad Internacional de Florida (FIU), en Miami, Estados Unidos, el 25 de enero de 2015. Estuvo conducida por Natalie Morales y Thomas Roberts.
+        </p>
+        <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+          El grupo de 15 cuartofinalistas se dio a conocer durante la competencia final. Este grupo estuvo conformado de la siguiente manera:
+        </p>
+        <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+          El jurado preliminar eligió a las concursantes que más sobresalieron en las tres áreas de competencia durante la etapa preliminar, otorgando nueve lugares para la noche final.
+        </p>
+        <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+          La organización Miss Universo otorgó otros seis lugares para aquellas candidatas que, a consideración de la organización y el personal de Miss Universo, son una buena opción para coronarse como ganadora, basándose en su desempeño durante las actividades del concurso y apreciación personal de los miembros de la organización.
+        </p>
+        <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+          Estas 15 cuartofinalistas fueron evaluadas por un Jurado final:
+          
+          Las 15 cuartofinalistas desfilaron en una nueva ronda en traje de baño (similares para todas), dónde salieron de la competencia cinco de ellas.
+          Las 10 que continuaron (semifinalistas) desfilaron en traje de noche (elegidos al gusto de cada concursante), dónde otras cinco más fueron eliminadas del concurso.
+          Las 5 restantes (finalistas) se sometieron a una pregunta por parte del jurado y otra pregunta final, que fue escogida vía Facebook, y fue la misma para las finalistas; el jurado determinó las posiciones finales y a la ganadora, Miss Universo 2014.
+        </p>
+      </section>
+      <!--En of Contenido -->
+      <div class="sticky top-20 md:top-28 z-[70] w-full"></div>
+      <!-- Contenido -->
+      <section class="mx-10">
+        <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Información extra</h2>
+        <p class="my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+          Algunas de las delegadas del Miss Universo 2014 han participado, o participarán, en otros certámenes internacionales de importancia:
+          Laurien Angelista (Curazao) ganó el Miss Caraïbes Hibiscus 2007.
+          Jimena Espinoza (Perú) participó, sin éxito, en el concurso World Miss University 2008 y fue semifinalista en el Miss Model of the World 2010.
+          Johana Riva (Uruguay) fue semifinalista del Miss Tourism International 2008 y concursó, sin éxito, en Miss Atlántico Internacional 2010.
+          Chanel Beckenlehner (Canadá) concursó en el Miss Global Beauty 2009, en el Reinado Internacional del Café 2009 y en el Miss Internacional 2009; en los tres certámenes fue semifinalista.
+          Kimberly Castillo (República Dominicana) ganó el Miss Italia Nel Mondo 2010, y fue cuarta finalista (sexto lugar) en Miss Continentes Unidos 2015.
+          Ana Luisa Montúfar (Guatemala) fue la Primera finalista del certamen Miss Teen Internacional 2010 y compitió, sin éxito, en Miss Tierra 2011.
+          Sabrina Beneett (Malasia) compitió en el certamen Asia New Face Model 2011, sin figurar.
+          Yasmin Verheijen (Países Bajos) concursó, sin figuración, en el Miss Supranacional 2011.
+          Patricia Da Silva (Portugal) compitió en el Miss Internacional 2011, sin éxito.
+          Tegan Martin (Australia) participó en el certamen Miss Bikini International 2011.
+          Camilla Hansson (Suecia) compitió en Miss Tierra 2012, sin lograr figuración.
+          Nia Sanchez (Estados Unidos) fue Primera finalista en el certamen Reina Internacional del Banano 2011.
+          Urška Bračko (Eslovenia) concursó, sin figuración, en el certamen World Miss University 2011.
+          Gabriela Berrios (Puerto Rico) fue semifinalista en el Miss Supranacional 2012 y participó, sin éxito, en Miss Internacional 2016.
+          Karina Ramos (Costa Rica) concursó en Miss Supranacional 2012, Miss Belleza Americana 2013, Reina Internacional de la Ganadería 2013, y Miss Turismo Latino 2013; colocándose entre las semifinalistas y finalistas en todos ellos, además ganó el título Reina Internacional de la Paz 2013.
+          Andjelka Tomasevic (Serbia) fue finalista en el Miss Tierra 2013.
+          Diana Harkusha (Ucrania) ganó el concurso Miss Kemer Internacional 2013 en representación de Bielorrusia.
+          Claudia Tavel (Bolivia) fue finalista del Reina Hispanoamericana 2013.
+          Alejandra Argudo (Ecuador) fue finalista del World Next Top Model 2013.
+          Marline Barberena (Nicaragua) concursó en Nuestra Belleza Latina 2013.
+          Evelyn Appiah (Ghana) concursó sin éxito en Top Model of The World 2013, fue semifinalista en Miss Tierra 2019 y ganó Queen Beauty Universe 2016 y Miss Grand Internacional 2020 representando a Estados Unidos.
+          Hiwot Mamo (Etiopía) fue Primera finalista del certamen Miss Grand Internacional 2014, título del cual fue despojada al participar en Miss Universo 2014.
+          Sally Jara (Paraguay) compitió en Reina Hispanoamericana 2014, sin lograr destacar.
+          Maggaly Nguema (Gabón) participó en el Miss Internacional 2014, sin lograr figuración y en Miss Supranational 2014, posicionándose como segunda finalista.
+          Nale Boniface (Tanzania) concursó en el Miss Tierra 2014, sin éxito.
+          Christie Désir (Haití) concursó en el Miss Internacional 2014, sin éxito.
+          Tomii Culmer (Bahamas) ganó el concurso Miss Coco Internacional 2014.
+          Julia Furdea (Austria), Anissa Blondin (Bélgica), Ana Zubashvilli (Georgia) y Saly Greige (Líbano) participaron en el Miss Mundo 2014, todas ellas sin alcanzar una posición destacada.
+          Digene Zemmerman (Aruba) fue primera finalista (tercer lugar) en Reina Hispanoamericana 2015.
+          Migbelis Castellanos (Venezuela) ganó Nuestra Belleza Latina 2018.
+          Algunas de las delegadas nacieron o viven en otro país al que representaron, o bien, tienen un origen étnico distinto:
+          Digene Zemmerman (Aruba) nació en los Países Bajos.
+          Julia Furdea (Austria) nació en Rumania.
+          Anissa Blondin (Bélgica) tiene ascendencia argelina y marroquí.
+          Kristina Georgieva (Bulgaria) vive en los Países Bajos.
+          Chanel Beckenlehner (Canadá) tiene ascendencia alemana.
+          Nia Sanchez (Estados Unidos) tiene ascendencia alemana y mexicana.
+          Mary Jean Lastimosa (Filipinas) tiene ascendencia árabe y española.
+          Ismini Dafopoulou (Grecia) es mitad serbia.
+          Christie Desir (Haití) nació en los Estados Unidos.
+          Kaci Fennell (Jamaica) tiene ascendencia francesa e india.
+          Artnesa Krasniqi (Kosovo) nació en Suiza y posee doble nacionalidad kosovar y suiza.
+          Patricija Belousova (Lituania) tiene origen polaco y ruso.
+          Sabrina Beneett (Malasia) y Rathi Menon (Singapur) son de origen indio.
+          Josselyn Garciglia (México), Kimberly Castillo (República Dominicana) y Jimena Espinoza (Perú) tienen ascendencia italiana.
+          Marline Barberena (Nicaragua) y Pimbongkod Chankaew (Tailandia) nacieron y viven en los Estados Unidos.
+          Yasmin Verheijen (Países Bajos) tiene ascendencia alemana, china e india.
+          Patrícia Da Silva (Portugal) nació en Suiza y tiene doble nacionalidad: portuguesa y suiza.
+          Andjelka Tomasevic (Serbia) nació en Kosovo.
+          Zoé Metthez (Suiza) tiene ascendencia dominicana.
+          Johana Riva (Uruguay) tiene ascendencia armenia.
+          Valentina Ferrer (Argentina), Alejandra Argudo (Ecuador), Brittany Bell (Guam) y Gabriela Berrios (Puerto Rico) radican en los Estados Unidos; Bell fue Miss Arizona EUA 2010 y compitió por el título Miss EUA 2010.
+          Otros datos significativos de algunas de las delegadas:
+          Valentina Ferrer (Argentina) trabaja para la agencia de modelos internacional Wilhemina's Models.
+          Bea Toivonen (Finlandia) es hija de Miss Finlandia 1985, Marja Kinnunen, quien concursó en Miss Universo 1985, sin éxito.
+          Artnesa Krasniqi (Kosovo) es modelo profesional en Kosovo y Albania.
+          Jimena Espinoza (Perú) es una reconocida modelo y anfitriona en su país.
+          Diana Harkusha (Ucrania) es una modelo profesional en su país.
+        </p>
+      </section>
     </section>
     <!-- End of Cuerpo de página -->
     <!-- Modals -->
@@ -576,8 +915,8 @@
             </div>
           </div>
           <div class="container w-full h-5/6 py-8 px-8 md:px-16 text-base font-normal text-gray-800 dark:text-white overflow-auto text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
-            <img class="block dark:hidden px-48 mb-10" src="images/trump-day.svg" alt="">
-            <img class="hidden dark:block px-48 mb-10" src="images/trump-dark.svg" alt="">
+            <img class="block dark:hidden px-0 md:px-48 mb-10" src="images/trump-day.svg" alt="">
+            <img class="hidden dark:block px-0 md:px-48 mb-10" src="images/trump-dark.svg" alt="">
             The Trump Organization (en español: La Organización Trump) es una empresa estadounidense, con sede en Manhattan, Nueva York. Se dedica a la gestión de propiedades y hoteles en diferentes países del mundo, así como al desarrollo de diversos proyectos de construcción y bienes inmuebles. Su director ejecutivo era Donald Trump pero fue destituido quien también es accionista mayoritario y fue Presidente de los Estados Unidos entre 2017 y 2021.
           </div>
         </div>
@@ -615,8 +954,140 @@
         </div>
       </div>
     </div>
+    <div x-show="show_info_broadcaster_2">
+      <div @click="close_broadcaster_2()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
+      </div>
+      <div class="flex justify-center">
+        <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white dark:bg-slate-800 dark:shadow-lg dark:shadow-gray-400 rounded-lg">
+          <div class="flex w-full h-1/6 border-b border-gray-400">
+            <div class="w-10/12 md:w-11/12 pl-7 flex items-center text-gray-800 dark:text-white text-xl font-bold">Telemundo</div>
+            <div class="w-2/12 md:w-1/12 flex justify-center items-center">
+              <i @click="close_broadcaster_2()" class="fa-solid fa-xmark text-gray-800 dark:text-white hover:text-white hover:bg-red-500 hover:rounded-full hover:py-1 hover:px-2 cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="container w-full h-5/6 py-8 px-8 md:px-16 overflow-auto">
+            <div class="flex justify-center">
+              <img class="block dark:hidden px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="images/telemundo-day.svg" alt="">
+              <img class="hidden dark:block px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="images/telemundo-dark.svg" alt="">
+            </div>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              Telemundo es una cadena de televisión terrestre estadounidense que transmite en idioma español propiedad de Comcast a través de NBCUniversal. Es el segundo mayor proveedor de contenido en español en los Estados Unidos solo por detrás de su competidor estadounidense Univision, con programación distribuida en todo el mundo a más de 100 países en más de 35 idiomas.
+            </p>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              El canal transmite programas y contenido original dirigido a audiencias hispanohablantes en los Estados Unidos y en todo el mundo, que consisten en telenovelas, deportes, Reality Shows, programación de noticias y películas, importadas o dobladas al español. Además, Telemundo opera a NBC Universo, un canal separado dirigido a un público hispano joven; Telemundo Digital Media, que distribuye contenido de programación original a través de los medios de comunicación, los sitios web de Telemundo y NBC Universo; la estación de transmisión gratuita WKAQ-TV de Puerto Rico; y la división de distribución internacional Telemundo Internacional.
+            </p>
+            <p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              Telemundo tiene su sede en el suburbio de Beacon Lakes en Miami, Florida y cuenta con 1900 empleados en todo el mundo. La mayoría de los programas de Telemundo se filman en una instalación de estudio operada en Miami, donde el 85 % de las telenovelas de la red se filmaron durante 2011. El drama promedio por hora en horario estelar cuesta 70 000 USD para producirse.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- end of Modals -->
   </div>
+  <!-- Footer -->
+  <footer class="mt-0 md:mt-24">
+    <div class="w-full bg-gradient-to-t from-gray-300 dark:from-slate-800 to-transparent px-5 py-7">
+      <div class="grid grid-cols-4 gap-5">
+        <div class="container col-span-4 md:col-span-1 font-delmon-delicate">
+          <img class="block dark:hidden" src="../images/logo-BPproject2x1-fuente-negro.svg" alt="">
+          <img class="hidden dark:block" src="../images/logo-BPproject2x1-fuente-blanco.svg" alt="">
+          <div class="mt-10 md:mt-4 w-full flex flex-row justify-evenly">
+            <i class="fa-brands fa-facebook text-gray-700 dark:text-white hover:text-gray-900 dark:hover:bg-white dark:hover:text-blue-800 dark:hover:rounded-full scale-[2] md:scale-125 hover:scale-[2.5] md:hover:scale-150 transition duration-200" title="Facebook"></i>
+            <i class="fa-brands fa-twitter-square text-gray-700 dark:text-white hover:text-gray-900 dark:hover:bg-white dark:hover:text-sky-400 scale-[2] md:scale-125 hover:scale-[2.5] md:hover:scale-150 transition duration-200" title="Twitter"></i>
+            <i class="fa-brands fa-instagram text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white dark:hover:rounded-sm dark:hover:bg-gradient-to-t dark:hover:from-amber-400 dark:hover:via-red-700 dark:hover:to-violet-900 scale-[2] md:scale-125 hover:scale-[2.5] md:hover:scale-150 transition duration-200" title="Instagram"></i>
+            <i class="fa-brands fa-tiktok text-gray-700 dark:text-white hover:text-gray-900 dark:hover:bg-white dark:hover:text-gray-900 dark:hover:rounded-full dark:hover:p-0.5 scale-[2] md:scale-125 hover:scale-[2.5] md:hover:scale-150 transition duration-200" title="Tiktok"></i>
+          </div>
+        </div>
+        <div class="col-span-4 md:col-span-1 text-center md:text-left">
+          <h4 class="ml-0 md:-ml-5 mt-5 md:mt-0 mb-3 text-3xl md:text-xl font-bold text-gray-800 dark:text-white">Ediciones</h4>
+          <ul class="list-none md:list-disc">
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Miss Universo</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Miss Mundo</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Miss Internacional</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Miss Gran International</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Miss Tierra</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-4 md:col-span-1 text-center md:text-left">
+          <h4 class="ml-0 md:-ml-5 mt-5 md:mt-0 mb-3 text-3xl md:text-xl font-bold text-gray-800 dark:text-white">Noticias</h4>
+          <ul class="list-none md:list-disc">
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Comités nacionales</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Elección de candidatas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Gestión de actuales reinas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Rumores</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Otros</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-4 md:col-span-1 text-center md:text-left">
+          <h4 class="ml-0 md:-ml-5 mt-5 md:mt-0 mb-3 text-3xl md:text-xl font-bold text-gray-800 dark:text-white">Estadisticas</h4>
+          <ul class="list-none md:list-disc">
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Records</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Listado candidatas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="text-base font-normal text-gray-800 dark:text-white hover:underline hover:text-rose-800 dark:hover:text-rose-300">Listado paises</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-5">
+        <p class="text-base font-normal text-gray-800 dark:text-white text-center">
+          Todos los derechos reservados. Copyright © 2022 Andrés Soto Suárez.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- fin Footer -->
 </body>
 <script>
   function data(){
@@ -634,6 +1105,13 @@
       },
       close_broadcaster() {
         this.show_info_broadcaster = false;
+      },
+      show_info_broadcaster_2: false,
+      open_broadcaster_2() {
+        this.show_info_broadcaster_2 = true;
+      },
+      close_broadcaster_2() {
+        this.show_info_broadcaster_2 = false;
       }
     }
   }
