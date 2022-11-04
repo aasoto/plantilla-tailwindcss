@@ -205,6 +205,28 @@
           <h2 class="text-xl font-bold text-rose-700 dark:text-rose-300 hover:underline cursor-pointer text-center">Ver más noticias</h2>
         </div>
       </section>
+      <!-- Ediciones recomendadas -->
+      <section class="my-5 md:container">
+        <div class="flex flex-col md:flex-row mx-10 w-auto container">
+          <div class="basis-0 md:basis-1/2">
+            <h1 class="sticky top-28 z-50 text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Ediciones destacadas</h1>
+          </div>
+          <div class="basis-0 md:basis-2/3 container">
+            <template x-for="edition in recommended_editions">
+              <div class="container relative w-full h-72 my-4 rounded-lg cursor-pointer">
+                <img class="rounded-lg w-full h-full object-cover object-top" :src="`${edition.bg_image}`" alt="">
+                <div class="absolute top-0 z-10 bg-gradient-to-t from-black to-transparent rounded-lg w-full h-full"></div>
+                <img class="absolute top-4 right-4 z-20 rounded-lg h-1/3 hover:mt-4 hover:animate-bounce transition" :src="`${edition.logo}`" alt="">
+                <div class="absolute bottom-2 flex flex-col-reverse z-20 h-2/3 px-3">
+                  <p class="text-white font-light text-base" x-text="edition.description"></p>
+                  <h2 class="text-white font-bold text-2xl" x-text="edition.name"></h2>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+      <!--End of Ediciones recomendadas -->
     </section>
     <!-- fin de Cuerpo de la página -->
   </div>
@@ -462,6 +484,29 @@
             image: '../images/noticias/image-8.jpg',
             title: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, veritatis.',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos quae labore blanditiis harum distinctio incidunt veniam. Dignissimos, rerum voluptatem.'
+          }
+        ],
+        recommended_editions: [
+          {
+            bg_image: 'pages/images/background.jpg',
+            logo: 'pages/images/logo-edition.jpg',
+            name: 'Miss Universo 2014',
+            description: 'La 63.ª edición de Miss Universo, correspondiente al año 2014 se llevó a cabo en el 25 de enero de 2015 en la Arena de la Universidad Internacional de Florida, en la ciudad de University Park, Estados Unidos. Candidatas de 88 naciones y territorios autónomos concursaron por el título en el certamen.'
+          },{
+            bg_image: 'pages/images/otras/miss_universe_2005_bg.jpg',
+            logo: 'pages/images/otras/miss_universe_2005_logo.jpg',
+            name: 'Miss Universe 2005',
+            description: 'La 54.ª edición de Miss Universo se realizó el 31 de mayo de 2005 en el Impact Arena en Bangkok, Tailandia. Candidatas de 81 naciones y territorios autónomos participaron en esta edición.'
+          },{
+            bg_image: 'pages/images/otras/miss_universe_2018_bg.jpg',
+            logo: 'pages/images/otras/miss_universe_2018_logo.jpg',
+            name: 'Miss Universe 2018',
+            description: 'Miss Universo 2018 fue la 67.ª edición del certamen Miss Universo correspondiente al año 2018. Las actividades se llevaron a cabo en Bangkok, Tailandia; candidatas de 94 países y territorios autónomos compitieron por el título.'
+          },{
+            bg_image: 'pages/images/otras/miss_universe_2010_bg.jpg',
+            logo: 'pages/images/otras/miss_universe_2010_logo.jpg',
+            name: 'Miss Universe 2010',
+            description: 'La 59.ª edición de Miss Universo se realizó el 23 de agosto de 2010, en el Centro de Eventos Mandalay Bay, dentro del complejo hotelero Mandalay Bay Resort en Las Vegas, Estados Unidos. Concursantes de 83 naciones y territorios autónomos compitieron por este título de belleza.'
           }
         ]
       }
