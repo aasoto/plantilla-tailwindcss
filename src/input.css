@@ -10,4 +10,18 @@
   .hamburger div:last-child{
     @apply -rotate-45 -translate-y-[0.330rem]
   }
+
+  @layer base{
+    .info-texto p{
+      @apply my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700
+    }
+
+    .info-texto ul{
+      @apply list-disc list-outside
+    }
+
+    .info-texto li{
+      @apply ml-4 my-1 text-base font-medium text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700
+    }
+  } 
 }
