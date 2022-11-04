@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Beauty Pageant Project</title>
   <!-- <link rel="stylesheet" href="../../dist/output.css"> -->
-  <script defer src="../../dist/app.js"></script>
-  <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+  <!-- <script defer src="../../dist/app.js"></script> -->
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.min.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style type="text/tailwindcss">
     @layer components{
@@ -42,7 +44,6 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
 </head>
 
 <body class="relative bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
@@ -78,9 +79,11 @@
                 <div
                   class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-10 p-0 md:p-4 rounded-none md:rounded-md transition">
                   <ul class="text-center border-t-2 border-b-2 border-rose-600 dark:border-rose-300">
-                    <li
-                      class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
-                      Miss Universo</li>
+                    <a href="pages/editions.html">
+                      <li
+                        class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
+                        Miss Universo</li>
+                    </a>
                     <li
                       class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
                       Miss Mundo</li>
@@ -123,7 +126,7 @@
           <i class="fa-solid fa-angle-left scale-[1.5] md:scale-[2] lg:scale-[3]"></i>
         </div>
         <template x-for="item in dataCarousel()">
-          <template x-if="item.selected">
+          <div x-show="item.selected" x-transition>
             <div class="relative">
               <img class="-z-50 w-full max-h-[600px] object-cover object-center" :src="`${item.background}`" alt="">
               <div class="absolute top-4 md:top-32 lg:top-40 mx-10 md:mx-16 lg:mx-28 flex flex-col items-start justify-center">
@@ -139,7 +142,7 @@
                 </div>
               </div>
             </div>
-          </template>
+          </div>
         </template>
         <div @click="next()" class="absolute top-0 right-0 py-[100px] md:py-[160px] lg:py-[300px] z-10 px-3 md:px-5 text-gray-400 hover:text-white hover:bg-black/60 dark:hover:bg-slate-400 rounded-l-full dark:text-white dark:hover:text-slate-800 transition duration-200 cursor-pointer">
           <i class="fa-solid fa-angle-right scale-[1.5] md:scale-[2] lg:scale-[3]"></i>
@@ -157,46 +160,24 @@
           <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Actuales
             ganadoras de los certamenes de belleza más importantes</h1>
         </div>
-        <div class="mx-0 sm:mx-10 mt-10">
-          <div class="container mx-auto flex px-8 lg:py-20 py-14 md:flex-row flex-col items-center">
-            <div class="lg:flex-grow md:w-1/2 md:pr-24 flex flex-col justify-center md:justify-start mb-16 md:mb-0">
-              <h1 class="text-3xl sm:text-4xl mb-4 font-medium text-center md:text-left" x-text="current_titleholders[0].edition"></h1>
-              <p class="mb-8 leading-relaxed text-lg text-center md:text-left" x-text="current_titleholders[0].description"></p>
+        <div class="mx-10 my-10 flex flex-row gap-2 md:gap-4">
+          <template x-for="titleholder in current_titleholders">
+            <div @click = "show_info_titleholder(titleholder)" class="basis-1/3 container flex flex-col justify-center items-center">
+              <div class="relative flex flex-col items-center justify-center">
+                <img class="rounded-full border-4 md:border-8 border-rose-600 w-32 md:w-60 h-32 md:h-60 object-cover object-center cursor-pointer" :src="`${titleholder.image}`" alt="">
+                <span class="absolute bottom-3 md:bottom-6 left-3 md:left-6"><i :class="`fi fi-${titleholder.flag} fis rounded-full scale-[3] cursor-pointer`"></i></span>
+              </div>
             </div>
-            <div class="relative flex flex-col lg:max-w-lg lg:w-full md:w-1/2 w-5/6 items-center justify-center">
-              <img
-                class="rounded-full border-8 border-rose-600 w-60 h-60 sm:w-72 lg:w-96 sm:h-72 lg:h-96 object-cover object-center"
-                :src="`${current_titleholders[0].image}`" alt="">
-              <img class="absolute scale-150 sm:scale-110 -z-10" src="images/esferas.svg" alt="">
-            </div>
-          </div>
-          <div class="container mx-auto flex px-8 lg:py-20 py-14 md:flex-row flex-col items-center">
-            <div
-              class="ml-0 md:ml-10 lg:flex-grow md:w-1/2 md:pr-24 flex flex-col justify-center md:justify-start mb-16 md:mb-0">
-              <h1 class="text-3xl sm:text-4xl mb-4 font-medium text-center md:text-left" x-text="current_titleholders[1].edition"></h1>
-              <p class="mb-8 leading-relaxed text-lg text-center md:text-left" x-text="current_titleholders[1].description"></p>
-            </div>
-            <div
-              class="relative flex flex-col lg:max-w-lg lg:w-full md:w-1/2 w-5/6 items-center justify-center md:order-first">
-              <img
-                class="rounded-full border-8 border-rose-600 w-60 h-60 sm:w-72 lg:w-96 sm:h-72 lg:h-96 object-cover object-center"
-                :src="`${current_titleholders[1].image}`" alt="">
-              <img class="absolute scale-125 sm:scale-100 -z-10" src="images/barras.svg" alt="">
-            </div>
-          </div>
-          <div class="container mx-auto flex px-8 lg:py-20 py-14 md:flex-row flex-col items-center">
-            <div class="lg:flex-grow md:w-1/2 md:pr-24 flex flex-col justify-center md:justify-start mb-16 md:mb-0">
-              <h1 class="text-3xl sm:text-4xl mb-4 font-medium text-center md:text-left" x-text="current_titleholders[2].edition"></h1>
-              <p class="mb-8 leading-relaxed text-lg text-center md:text-left" x-text="current_titleholders[2].description"></p>
-            </div>
-            <div class="relative flex flex-col lg:max-w-lg lg:w-full md:w-1/2 w-5/6 items-center justify-center">
-              <img
-                class="rounded-full border-8 border-rose-600 w-60 h-60 sm:w-72 lg:w-96 sm:h-72 lg:h-96 object-cover object-center"
-                :src="`${current_titleholders[2].image}`" alt="">
-              <img class="absolute scale-125 sm:scale-100 -z-10" src="images/lunas.svg" alt="">
-            </div>
-          </div>
+          </template>
         </div>
+        <template x-for="titleholder_info in current_titleholders">
+          <div x-show="titleholder_info.show" x-transition>
+            <div class="w-10/12 mx-auto flex flex-col justify-center md:justify-start my-16">
+              <h1 class="text-3xl sm:text-4xl mb-4 font-medium text-center md:text-left" x-text="titleholder_info.edition"></h1>
+              <p class="mb-8 leading-relaxed text-lg text-center md:text-left" x-text="titleholder_info.description"></p>
+            </div>
+          </div>
+        </template>
       </section>
       <!-- fin Sección de ganadoras actuales -->
       <!-- Sección de noticias -->
@@ -422,17 +403,32 @@
           {
             edition: 'Miss Universo 2021',
             description: 'Harnaaz Kaur Sandhu de la India coronada el 13 de diciembre de 2021 en Eilat, Israel.',
-            image: '../images/Captura2.PNG'
+            image: '../images/Captura2.PNG',
+            flag: 'in',
+            show: false
           },{
             edition: 'Miss Mundo 2021',
             description: 'Karolina Bielawska de Polonia coronada en Marzo del 2022 en San Juan, Puerto Rico.',
-            image: '../images/miss-world.jpg'
+            image: '../images/miss-world.jpg',
+            flag: 'pl',
+            show: false
           },{
             edition: 'Miss Grand International 2022',
             description: 'Isabella Menin de Brasil coronada el 25 de octubre del 2022 en Bogor, Indonesia.',
-            image: '../images/miss-grand-2022.PNG'
+            image: '../images/miss-grand-2022.PNG',
+            flag: 'br',
+            show: false
           }
         ],
+        show_info_titleholder(key) {
+          for (let i = 0; i < this.current_titleholders.length; i++) {
+            if ((key.edition == this.current_titleholders[i].edition) && (key.description == this.current_titleholders[i].description)) {
+              this.current_titleholders[i].show = true;
+            } else {
+              this.current_titleholders[i].show = false;
+            }
+          }
+        },
         latest_news: [
           {
             image: '../images/noticias/image-1.jpg',
