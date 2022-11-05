@@ -98,3 +98,15 @@ git merge develop
 //un conflicto es cuando dos progrmaadores hacen cambios en la misma parte del código y al mometo de hacer un merge estás dos lineas de encuentran modificadas.
 //acto seguido se crea una nueva rama para solucionar el conflicto. (master|MERGING)
 //esta es una rama provisional donde se escojen las lineas correctas y se confirma por medio de un commit y al final la rama provisional se borrar y se situa en la rama donde se hizo el merge
+
+/*------------------- GITHUB --------------------*/
+//eliminar el origin en un repositorio existente, es decir repositorio de github
+git remote remove origin
+//agregar nuevo repositorio
+git remote add origin https://github.com/user123/repository.git
+
+/*----------------- GIT PULL --------------------------*/
+//traer todos los cambios que se encuentren en el repositorio a mi rama ejemplo: me encuentro en la rama develop y quiero traer todos lo cambios que ha hecho alguien mas y ya se encuentran en la rama main ejecuto el siguiente comando
+git pull origin develop
+//si en la ejecución del comando anterior ocurrió un error ejecutar:
+git pull origin develop --allow-unrelated-histories
