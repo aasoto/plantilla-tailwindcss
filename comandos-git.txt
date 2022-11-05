@@ -110,3 +110,5 @@ git remote add origin https://github.com/user123/repository.git
 git pull origin main
 //si en la ejecución del comando anterior ocurrió un error ejecutar:
 git pull origin main --allow-unrelated-histories
+
+/*********************** RAMA COMANDOS INICIALIZADA ********************************/
