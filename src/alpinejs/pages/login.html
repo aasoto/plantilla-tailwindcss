@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <!-- Local alpine.js -->
+    <!-- <script defer src="../../../dist/app.js"></script> -->
+    <!-- Local tailwind css -->
+    <!-- <link rel="stylesheet" href="../../../dist/output.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style type="text/tailwindcss">
+        @layer components{
+
+    }
+  </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    screens: {
+                        'iPhoneSE': '375px',
+                        'iPhoneXR': '414px',
+                        'iPhone12Pro': '390px',
+                        'GalaxyFold': '280px',
+                    },
+                },
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white dark:bg-slate-800">
+    <div x-data="data()">
+        <div class="grid place-items-center h-screen">
+            <div class="container w-10/12 h-5/6">
+                <div class="flex flex-col md:flex-row h-full">
+                    <div class="basis-0 md:basis-1/2 flex justify-center items-center">
+                        <div class="z-20 -mr-96 flex flex-col justify-center items-center w-5/6 h-2/3 bg-white/70 backdrop-blur-xl shadow-lg rounded-xl">
+                            <h1 class="mb-5 text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900">Iniciar Sesión</h1>
+                            <div class="border-t border-gray-400 mx-10">
+                                <input class="border border-gray-400 rounded-lg my-5 px-2 py-2 w-full focus:border-rose-700 focus:text-gray-500" type="email" placeholder="Correo electronico">
+                                <input class="border border-gray-400 rounded-lg mb-5 px-2 py-2 w-full focus:border-rose-700 focus:text-gray-500" type="password" placeholder="Contraseña">
+                                <div class="flex flex-row">
+                                    <div class="basis-1/2 flex flex-col justify-center items-center">
+                                        <label class="text-gray-800 dark:text-white">
+                                            <input type="checkbox" class="accent-rose-700" checked> Recordar contraseña
+                                        </label>
+                                    </div>
+                                    <div class="basis-1/2 text-center">
+                                        <button class="rounded-full px-5 py-2 text-white font-bold bg-gradient-to-r from-pink-600 to-rose-900 hover:scale-110 transition">Iniciar sesión</button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row justify-center items-center mt-5">
+                                    <label class="text-gray-800 dark:text-white font-light" for="">¿No tienes una cuenta? </label>
+                                    <a class="ml-2 text-rose-700 hover:text-rose-900 hover:underline font-medium" href="#">Registrate aquí.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basis-0 md:basis-1/2 container flex justify-center items-center">
+                        <div class="relative w-11/12 h-5/6">
+                            <template class="w-full h-full" x-for="image in images">
+                                <div class="w-full h-full" x-show="image.show">
+                                    <img class="-z-10 w-full h-full rounded-xl object-cover object-center blur-xl"
+                                        :src="`${image.image}`" alt="">
+                                    <img class="absolute top-0 z-10 w-full h-full rounded-xl object-cover object-center"
+                                        :src="`${image.image}`" alt="">
+                                </div>
+                            </template>
+                            <div x-init="change_image()"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function data() {
+        return {
+            images: [
+                {
+                    image: 'images/login/image-1.jpg',
+                    show: true
+                }, {
+                    image: 'images/login/image-2.jpg',
+                    show: false
+                }, {
+                    image: 'images/login/image-3.jpg',
+                    show: false
+                }
+            ],
+            change_image() {
+                i = 0
+                setInterval(() => {
+                    if (i == 0) {
+                        this.images[this.images.length-1].show = false;
+                        this.images[i].show = true;
+                        i++;
+                    } else {
+                        this.images[i-1].show = false;
+                        this.images[i].show = true;
+                        i++;
+                    }
+                    if (i == this.images.length) {
+                        i = 0;
+                    }
+                }, 5000);
+            }
+        }
+    }
+</script>
+
+</html>
