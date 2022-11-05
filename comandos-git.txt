@@ -107,6 +107,6 @@ git remote add origin https://github.com/user123/repository.git
 
 /*----------------- GIT PULL --------------------------*/
 //traer todos los cambios que se encuentren en el repositorio a mi rama ejemplo: me encuentro en la rama develop y quiero traer todos lo cambios que ha hecho alguien mas y ya se encuentran en la rama main ejecuto el siguiente comando
-git pull origin develop
+git pull origin main
 //si en la ejecución del comando anterior ocurrió un error ejecutar:
-git pull origin develop --allow-unrelated-histories
+git pull origin main --allow-unrelated-histories
