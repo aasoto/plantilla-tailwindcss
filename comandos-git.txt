@@ -33,6 +33,8 @@ git config --global user.email "user1999@gmail.com"
 /*------------ INICIALIZAR UN REPOSITORIO CON GIT ------------*/
 //iniciar un repositorio
 git init
+//si se inicia un repositorio por error, la forma de eliminarlo es utilizando el siguinete comando
+rm -rf .git (borra la carpeta .git)
 //mostrar el estatus de los archivos
 git status
 //para empezar a guardar los cambios en el repositorio, en profundidad quiere decir que estos cambios pasan a un estado llamado staging que una memoria donde quedan guardados antes de hacer el commit, todo lo que no esté en staging no se agregará al commit.
@@ -110,3 +112,5 @@ git remote add origin https://github.com/user123/repository.git
 git pull origin main
 //si en la ejecución del comando anterior ocurrió un error ejecutar:
 git pull origin main --allow-unrelated-histories
+
+/*********************** RAMA COMANDOS INICIALIZADA ********************************/
