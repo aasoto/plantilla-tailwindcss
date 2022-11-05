@@ -62,13 +62,13 @@
     <!-- Navegación -->
     <nav class="z-20 fixed top-0 md:top-4 2xl:top-7 w-full">
       <div
-        class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-lg shadow-gray-800 dark:shadow-gray-400 backdrop-blur-xl bg-white/50 dark:bg-slate-800 py-7">
+        class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-lg shadow-gray-800 dark:shadow-gray-400 backdrop-blur-xl bg-white/50 dark:bg-slate-800 py-7 md:py-2">
         <div class="z-20 ml-7">
           <div class="block dark:hidden">
-            <img class="w-[200px] h-[60px] -my-7" src="../../images/logo-BPproject-horizontal-fuente.svg" alt="">
+            <img class="w-[200px] md:w-auto h-[60px] md:h-[40px] -my-7 md:my-0" src="../../images/logo-BPproject-horizontal-fuente.svg" alt="">
           </div>
           <div class="hidden dark:block">
-            <img class="w-[200px] h-[60px] -my-7" src="../../images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+            <img class="w-[200px] md:w-auto h-[60px] md:h-[40px] -my-7 md:my-0" src="../../images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
           </div>
           <!-- <h1 class="font-semibold text-xl text-gray-800 dark:text-white">The Beauty Peagent Project</h1> -->
         </div>
@@ -88,7 +88,7 @@
                 <span>Ediciones</span><i class="fa-solid fa-chevron-down ml-2"></i></div>
               <div class="md:absolute">
                 <div
-                  class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-10 p-0 md:p-4 rounded-none md:rounded-md transition">
+                  class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-7 p-0 md:p-4 rounded-none md:rounded-md transition">
                   <ul class="text-center border-t-2 border-b-2 border-rose-600 dark:border-rose-300">
                     <a href="#">
                       <li
@@ -113,7 +113,7 @@
                 <span>Cuenta</span><i class="fa-solid fa-chevron-down ml-2"></i></div>
               <div class="md:absolute">
                 <div
-                  class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-10 px-0 md:px-7 py-0 md:py-4 rounded-none md:rounded-md transition">
+                  class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-7 px-0 md:px-7 py-0 md:py-4 rounded-none md:rounded-md transition">
                   <ul class="text-center border-t-2 border-b-2 border-rose-600 dark:border-rose-300">
                     <li
                       class="px-4 py-1 hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white font-medium text-base whitespace-nowrap cursor-pointer">
@@ -149,10 +149,10 @@
               <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Miss universo 2014</h1>
               <h2 class="text-xl md:text-2xl mb-4 font-medium text-center text-rose-700 dark:text-rose-300">63va edición del certamen de belleza de Miss Universo</h2>
             </div>
-            <div class="mx-8" x-html="description"></div>
+            <div class="mx-1 iPhoneSE:mx-5 sm:mx-8" x-html="description"></div>
             <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Resultados</h2>
             <div class="flex flex-col justify-center items-center my-8">
-              <div class="relative w-72 h-72">
+              <div class="relative w-60 iPhoneSE:w-72 h-60 iPhoneSE:h-72">
                 <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${winner[0].image}`" alt="">
                 <span class="absolute bottom-7 left-7"><i :class="`fi fi-${winner[0].flag} fis rounded-full scale-[5]`"></i></span>
               </div>
@@ -165,7 +165,7 @@
             <div class="flex flex-col xl:flex-row gap-2 justify-center items-center my-8">
               <div class="flex flex-row gap-2 my-3">
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${first_runner_up[0].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${first_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -174,7 +174,7 @@
                   <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="first_runner_up[0].country"></p>
                 </div>
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${second_runner_up[0].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${second_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -185,7 +185,7 @@
               </div>
               <div class="flex flex-row gap-2 my-3">
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${thrid_runner_up[0].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${thrid_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -194,7 +194,7 @@
                   <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="thrid_runner_up[0].country"></p>
                 </div>
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${fourth_runner_up[0].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${fourth_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -210,7 +210,7 @@
               <div class="flex flex-col lg:flex-row gap-2 my-3">
                 <div class="basis-2/3 flex flex-row gap-2">
                   <div class="basis-1/2 flex flex-col justify-center items-center">
-                    <div class="relative w-48 h-48">
+                    <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                       <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[0].image}`" alt="">
                       <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[0].flag} fis rounded-full scale-[3]`"></i></span>
                     </div>
@@ -219,7 +219,7 @@
                     <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[0].country"></p>
                   </div>
                   <div class="basis-1/2 flex flex-col justify-center items-center">
-                    <div class="relative w-48 h-48">
+                    <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                       <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[1].image}`" alt="">
                       <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[1].flag} fis rounded-full scale-[3]`"></i></span>
                     </div>
@@ -229,7 +229,7 @@
                   </div>
                 </div>
                 <div class="basis-1/3 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[2].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[2].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -240,7 +240,7 @@
               </div>
               <div class="flex flex-row gap-2 my-3">
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[3].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[3].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -249,7 +249,7 @@
                   <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[3].country"></p>
                 </div>
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[4].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[4].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -265,7 +265,7 @@
               <div class="flex flex-col lg:flex-row gap-2 my-3">
                 <div class="basis-2/3 flex flex-row gap-2">
                   <div class="basis-1/2 flex flex-col justify-center items-center">
-                    <div class="relative w-48 h-48">
+                    <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                       <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[0].image}`" alt="">
                       <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[0].flag} fis rounded-full scale-[3]`"></i></span>
                     </div>
@@ -274,7 +274,7 @@
                     <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[0].country"></p>
                   </div>
                   <div class="basis-1/2 flex flex-col justify-center items-center">
-                    <div class="relative w-48 h-48">
+                    <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                       <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[1].image}`" alt="">
                       <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[1].flag} fis rounded-full scale-[3]`"></i></span>
                     </div>
@@ -284,7 +284,7 @@
                   </div>
                 </div>
                 <div class="basis-1/3 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[2].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[2].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -295,7 +295,7 @@
               </div>
               <div class="flex flex-row gap-2 my-3">
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[3].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[3].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -304,7 +304,7 @@
                   <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[3].country"></p>
                 </div>
                 <div class="basis-1/2 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[4].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[4].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -320,7 +320,7 @@
               <div class="flex flex-col lg:flex-row gap-2 my-3">
                 <div class="basis-2/3 flex flex-row gap-2">
                   <div class="basis-1/2 flex flex-col justify-center items-center">
-                    <div class="relative w-48 h-48">
+                    <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                       <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${special_awards[0].image}`" alt="">
                       <span class="absolute bottom-5 left-5"><i :class="`fi fi-${special_awards[0].flag} fis rounded-full scale-[3]`"></i></span>
                     </div>
@@ -329,7 +329,7 @@
                     <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="special_awards[0].country"></p>
                   </div>
                   <div class="basis-1/2 flex flex-col justify-center items-center">
-                    <div class="relative w-48 h-48">
+                    <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                       <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${special_awards[1].image}`" alt="">
                       <span class="absolute bottom-5 left-5"><i :class="`fi fi-${special_awards[1].flag} fis rounded-full scale-[3]`"></i></span>
                     </div>
@@ -339,7 +339,7 @@
                   </div>
                 </div>
                 <div class="basis-1/3 flex flex-col justify-center items-center">
-                  <div class="relative w-48 h-48">
+                  <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
                     <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${special_awards[2].image}`" alt="">
                     <span class="absolute bottom-5 left-5"><i :class="`fi fi-${special_awards[2].flag} fis rounded-full scale-[3]`"></i></span>
                   </div>
@@ -352,7 +352,7 @@
           </div>
           <!-- End of Resumen -->
           <div class="basis-1/3">
-            <div class="container mx-auto -mt-0 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
+            <div class="container mx-auto -mt-0 md:-mt-20 py-5 md:py-10 w-full iPhoneSE:w-10/12 md:w-8/12">
               <div class="block md:hidden border-b border-gray-400 mx-5"></div>
               <h2 class="block md:hidden text-xl my-4 font-bold text-center text-rose-700 dark:text-rose-300">Propietario</h2>
               <img @click="open_owner()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" :src="`${owner[0].logo_light}`" alt="">
@@ -372,9 +372,9 @@
                 </div>
               </div>
             </div>
-            <div class="mx-6">
+            <div class="mx-1 iPhoneSE:mx-6">
               <div class="border-t border-gray-400 mx-10"></div>
-              <div class="flex flex-row gap-2 mt-4 mx-5">
+              <div class="flex flex-row gap-2 mt-4 mx-1 iPhoneSE:mx-5">
                 <div class="container basis-1/2">
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Sede final</h4>
                 </div>
@@ -407,7 +407,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Presentadores</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc md:list-none xl:list-disc list-inside">
+                  <ul class="list-none iPhoneSE:list-disc md:list-none xl:list-disc list-inside">
                     <template x-for="presenter in presenters">
                       <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                         <span><i :class="`fi fi-${presenter.flag}`"></i></span> <span x-text="presenter.name"></span>
@@ -421,7 +421,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Entretenimiento</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc md:list-none xl:list-disc list-inside">
+                  <ul class="list-none iPhoneSE:list-disc md:list-none xl:list-disc list-inside">
                     <template x-for="singer in entretaiment">
                       <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                         <span><i :class="`fi fi-${singer.flag}`"></i></span> <span x-text="singer.name"></span>
@@ -452,7 +452,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Retiros</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc md:list-none xl:list-disc list-inside">
+                  <ul class="list-none iPhoneSE:list-disc md:list-none xl:list-disc list-inside">
                     <template x-for="country in withdrawals">
                       <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                         <span><i :class="`fi fi-${country.flag}`"></i></span> <span x-text="country.country"></span>
@@ -466,7 +466,7 @@
                   <h4 class="text-base font-bold text-gray-800 dark:text-white text-right selection:bg-rose-300 dark:selection:bg-rose-700">Regresos</h4>
                 </div>
                 <div class="container basis-1/2">
-                  <ul class="list-disc md:list-none xl:list-disc list-inside">
+                  <ul class="list-none iPhoneSE:list-disc md:list-none xl:list-disc list-inside">
                     <template x-for="country in returns">
                       <li class="text-base font-normal text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
                         <span><i :class="`fi fi-${country.flag}`"></i></span> <span x-text="country.country"></span>
@@ -489,22 +489,22 @@
       <section>
         <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Concursantes</h2>
         <div class="flex justify-center items-center ">
-          <table class="container mx-5 md:mx-10 w-full">
-            <thead class="sticky top-20 md:top-28 z-[70] w-full bg-gray-300 rounded-full text-gray-800">
+          <table class="container mx-0 iPhoneSE:mx-5 md:mx-10 w-full">
+            <thead class="sticky top-20 md:top-18 z-[70] w-full bg-gray-300 text-xs iPhoneSE:text-base rounded-full text-gray-800">
               <tr class="text-center w-full">
-                <th class="w-2/6 py-3">País</th>
-                <th class="w-2/6 py-3">Concursante</th>
-                <th class="w-1/6 py-3">Edad</th>
-                <th class="w-1/6 py-3">Ciudad</th>
+                <th class="w-2/6 py-3 break-words iPhoneSE:break-normal">País</th>
+                <th class="w-2/6 py-3 break-words iPhoneSE:break-normal">Concursante</th>
+                <th class="w-1/6 py-3 break-words iPhoneSE:break-normal">Edad</th>
+                <th class="w-1/6 py-3 break-words iPhoneSE:break-normal">Ciudad</th>
               </tr>
             </thead>
             <tbody class="w-full">
               <template x-for="contestant in contestants">
-                <tr class="w-full border-b border-gray-300">
-                  <td class="w-2/6 px-2 py-3 font-bold"><span><i :class="`fi fi-${contestant.flag} fis rounded-full scale-125`"></i></span> <span x-text="contestant.country"></span></td>
-                  <td class="w-2/6 px-2 py-3 italic" x-text="contestant.name"></td>
-                  <td class="w-1/6 px-2 py-3" x-text="contestant.age"></td>
-                  <td class="w-1/6 px-2 py-3" x-text="contestant.hometown"></td>
+                <tr class="w-full border-b text-xs iPhoneSE:text-base border-gray-300">
+                  <td class="w-2/6 px-2 py-3 font-bold break-words iPhoneSE:break-normal"><span><i :class="`fi fi-${contestant.flag} fis rounded-full scale-125`"></i></span> <span x-text="contestant.country"></span></td>
+                  <td class="w-2/6 px-2 py-3 italic break-words iPhoneSE:break-normal" x-text="contestant.name"></td>
+                  <td class="w-1/6 px-2 py-3 break-words iPhoneSE:break-normal" x-text="contestant.age"></td>
+                  <td class="w-1/6 px-2 py-3 break-words iPhoneSE:break-normal" x-text="contestant.hometown"></td>
                 </tr>
               </template>
             </tbody>
@@ -514,14 +514,14 @@
       <!--End of Candidatas -->
       <div class="sticky top-20 md:top-28 z-[70] w-full"></div>
       <!-- Contenido -->
-      <section class="mx-10">
+      <section class="mx-1 iPhoneSE:mx-5 sm:mx-10">
         <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Concursantes</h2>
         <span class="info-texto" x-html="contenido"></span>
       </section>
       <!--En of Contenido -->
       <div class="sticky top-20 md:top-28 z-[70] w-full"></div>
       <!-- Contenido -->
-      <section class="mx-10">
+      <section class="mx-1 iPhoneSE:mx-5 sm:mx-10">
         <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Información extra</h2>
         <span class="info-texto" x-html="info_extra"></span>
       </section>
