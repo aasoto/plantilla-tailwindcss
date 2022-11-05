@@ -20,9 +20,21 @@
       .hamburger div:last-child{
         @apply -rotate-45 -translate-y-[0.330rem]
       }
-
     }
     @layer base{
+      /* jost-regular - latin */
+      @font-face {
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        src: url('fonts/jost-v14-latin/jost-v14-latin-regular.eot'); /* IE9 Compat Modes */
+        src: local(''),
+            url('fonts/jost-v14-latin/jost-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('fonts/jost-v14-latin/jost-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+            url('fonts/jost-v14-latin/jost-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+            url('fonts/jost-v14-latin/jost-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+            url('fonts/jost-v14-latin/jost-v14-latin-regular.svg#Jost') format('svg'); /* Legacy iOS */
+      }
       .info-texto p{
         @apply my-5 text-base font-medium text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700
       }
@@ -45,7 +57,7 @@
             clifford: '#da373d',
           },
           fontFamily: {
-            'delmon-delicate': ['DelmonDelicate'],
+            jost: "'Jost', sans-serif",
           },
           screens: {
             'iPhoneSE': '375px',
@@ -58,7 +70,7 @@
     }
   </script>
 </head>
-<body class="relative bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
+<body class="font-jost relative bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
   <div x-data="data()">
     <!-- Navegación -->
     <nav class="z-20 fixed top-0 md:top-4 2xl:top-7 w-full">
