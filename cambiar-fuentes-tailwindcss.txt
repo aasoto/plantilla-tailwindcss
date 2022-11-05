@@ -1,0 +1,55 @@
+CAMBIAR FUENTES CON TAILWIND CSS
+ --> COLOCAR UNA FUENTE DE LA WEB
+	1. Buscar una fuente de uso publico en algun repositorio de fuentes como Google Fonts.
+	2. Seleccionar la fuente deseada.
+	3. Copiar la URL de esta fuente, y la forma que la que dice que puede ser invocada en CSS. Ejemplo:
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?		family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 		rel="stylesheet">
+
+		CSS rules to specify families
+
+		font-family: 'Jost', sans-serif;
+
+	4. Pegar etiquetas HTML en la cabecera de la página web.
+	5. En el tailwind.config.js agregar:
+
+		fontFamily: {
+            		jost: "'Jost', sans-serif",
+          	},
+
+	6. Por último colocar en la etiqueta <body> la clase font-jost
+
+ --> COLOCAR UNA FUENTE DESDE UN ARCHIVO LOCAL
+	Para colocar una fuente desde un archivo local este debe ser formato .woff o .woff2 para que puede ser soportado por la mayoría de los navegadores web.
+	1. Tener los archivos .woff y .woff2 de las fuentes que se desea implementar. Opcionalmente los tipo .eot (IE9 Compat Modes), .eot?#iefix (IEG-IE8), .ttf 	(Safari, Android, iOS), .svg (Legacy iOS).
+	2. Pegar el este código en el input.css
+
+		@layer base{
+      			/* jost-regular - latin */
+      			@font-face {
+        		font-family: 'Jost';
+        		font-style: normal;
+        		font-weight: 400;
+        		src: url('fonts/jost-v14-latin/jost-v14-latin-regular.eot'); /* IE9 Compat Modes */
+        		src: local(''),
+            			url('fonts/jost-v14-latin/jost-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            			url('fonts/jost-v14-latin/jost-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+            			url('fonts/jost-v14-latin/jost-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+            			url('fonts/jost-v14-latin/jost-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+            			url('fonts/jost-v14-latin/jost-v14-latin-regular.svg#Jost') format('svg'); /* Legacy iOS */
+      			}
+		}
+
+	3. Luego declarar la fuente en el tailwind.config.js
+	
+		theme: {
+        		extend: {
+          			fontFamily: {
+            				jost: "'Jost', sans-serif",
+          			},
+			}
+		}
+
+	4. Finalmente colocara la clases font-jost en la etiqueta <body> de la página donde se desea implementar o en la etiqueta de la sección donde se desea aplicar.
