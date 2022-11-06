@@ -121,7 +121,12 @@
                   <label for="dark_check" class="inline-flex relative items-center cursor-pointer">
                     <input @click="change_mode()" type="checkbox" :value="dark_mode" id="dark_check" class="sr-only peer">
                     <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-rose-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-rose-700 transition duration-200"></div>
-                    <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white">Dark mode</span>
+                    <div x-show="!dark_mode" x-transition>
+                      <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <div x-show="dark_mode" x-transition>
+                      <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-moon"></i></span>
+                    </div>
                   </label>
                 </div>
               </div>
