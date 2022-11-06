@@ -143,7 +143,7 @@
               <i class="fa-solid fa-angle-left scale-[1.5] md:scale-[2] lg:scale-[3]"></i>
             </div>
             <template x-for="item in dataCarousel()">
-              <div x-show="item.selected" x-transition>
+              <div x-show="item.selected">
                 <div class="relative">
                   <img class="-z-50 w-full max-h-[600px] object-cover object-center" :src="`${item.background}`" alt="">
                   <div class="absolute top-4 md:top-32 lg:top-40 mx-10 md:mx-16 lg:mx-28 flex flex-col items-start justify-center">
@@ -165,7 +165,7 @@
               <i class="fa-solid fa-angle-right scale-[1.5] md:scale-[2] lg:scale-[3]"></i>
             </div>
             <div class="absolute top-0 left-0 w-full h-full bg-black/30 dark:bg-slate-900/70"></div>
-            <!-- <div x-init="automatic_next()"></div> -->
+            <div x-init="automatic_next()"></div>
           </div>
         </section>
         <!-- Cuerpo de la página -->
@@ -390,6 +390,7 @@
         carousel_aux: [],
         carousel_aux_lenght: 0,
         item_selected: 0,
+        auto_carousel: true,
         dataCarousel() {
           for (let i = 0; i < this.carousel.length; i++) {
             this.carousel_aux[i] = this.carousel[i];
@@ -405,6 +406,7 @@
           return this.carousel_aux;
         },
         next() {
+          this.auto_carousel = false;
           this.item_selected++;
           if (this.item_selected == this.carousel_aux_lenght) {
             this.item_selected = 0;
@@ -424,6 +426,7 @@
           }
         },
         previous() {
+          this.auto_carousel = false;
           this.item_selected--;
           if (this.item_selected >= 0) {
             for (let i = 0; i < this.carousel_aux.length; i++) {
@@ -443,7 +446,23 @@
           }
         },
         automatic_next() {
-          setInterval(this.next(), 5000);
+          i = 0
+          setInterval(() => {
+            if (this.auto_carousel) {
+              if (i == 0) {
+                 this.carousel_aux[this.carousel_aux.length-1].selected = false;
+                 this.carousel_aux[i].selected = true;
+                 i++;
+               } else {
+                 this.carousel_aux[i-1].selected = false;
+                 this.carousel_aux[i].selected = true;
+                 i++;
+               }
+               if (i == this.carousel_aux.length) {
+                 i = 0;
+               }
+            }
+          }, 5000);
         },
         current_titleholders: [
           {
