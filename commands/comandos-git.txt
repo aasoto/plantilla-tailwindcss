@@ -95,6 +95,10 @@ git branch develop
 git checkout develop
 //para hacer un git merge se debe situar en la rama que se desea actualizar "estando en la rama master para traer los cambios que se hicieron en la rama develop ejecutar en siguiente comando":
 git merge develop
+//para ver ramas de commits
+git log --all --graph
+//ver ramas de los commits pero comprimidos
+git log --all --graph --decorate --oneline
 
 /*----------------- RESOLUCIÓN DE CONFLICTOS ------------------*/
 //un conflicto es cuando dos progrmaadores hacen cambios en la misma parte del código y al mometo de hacer un merge estás dos lineas de encuentran modificadas.
@@ -113,4 +117,26 @@ git pull origin main
 //si en la ejecución del comando anterior ocurrió un error ejecutar:
 git pull origin main --allow-unrelated-histories
 
-/*********************** RAMA COMANDOS INICIALIZADA ********************************/
+/*--------------- ALIAS -------------*/
+//crear un alias (alias "nombre para el comando"="comando de git")
+alias ramas="git log --all --graph --decorate --oneline"
+//eliminar un alias
+unalias ramas
+/*------------------- GIT TAGS -----------------*/
+//agregar un tag
+git tag -a v1.0 -m "primera versión de la app"
+//ver todas las tags
+git tag
+//para asignar tag a una commit en especifico (al final debe llevar el código del commit)
+git tag -a v0.1 -m "primera versión" de2ce34
+//ver que referencia tienen los tags 
+git show-ref --tags
+//mandar los tags hecho para el repositorio
+git push origin --tags
+//eliminar tag
+git tag -d v11.1
+//para que se termine de borrar el tag se debe hacer un push con el siguiente comando
+git push origin :refs/tags/v11.1
+//antes de mandar los tags se recomienda ejecutar el comando de pull para traerse todos la cambio que existan en el repositorio.
+//este comando indica traer todos los cambios a la rama main
+git pull origin main
