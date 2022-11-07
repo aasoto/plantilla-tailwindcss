@@ -1,0 +1,33 @@
+/*--------------------- INSTALAR FONT AWESOME Y FLAG ICONS CON LARAVEL MIX ----------------*/
+//ejecutar comandos npm para descargar font awesome y flag icons
+npm install --save @fortawesome/fontawesome-free
+npm install flag-icons
+//instalar laravel mix
+npm install laravel-mix --save-dev
+//crear archivo de webpack.mix.js
+touch webpack.mix.js (si el comando no funciona hacerlo manualmente)
+//pegar el siguiente código en el archivo de webpack.mix.js
+____________________________________________________
+// webpack.mix.js
+
+let mix = require('laravel-mix');
+
+mix.css('src/app.css', 'dist').setPublicPath('dist');
+____________________________________________________
+
+//crear archivo app.js en la carpeta src 'src/app.css'
+//pegar el siguiente código en el archivo app.css
+_____________________________________________________
+@import url('~@fortawesome/fontawesome-free/css/all.css');
+@import url('~flag-icons/css/flag-icons.css');
+_____________________________________________________
+
+//ejecutar comando para completar la instalación
+npx mix
+
+//traer las carpetas de images de fuentes y de images generadas en la carpeta dist al directorio o carpeta raiz
+/fonts (aquí están los iconos)
+/images (aquí están las banderas)
+
+//colocar la siguiente etiqueta en el archivo donde se va a utilizar fontawesome y flag icons
+  <script defer src="../dist/app.css"></script>
