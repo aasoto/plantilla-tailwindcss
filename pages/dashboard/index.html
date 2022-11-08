@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Local alpine.js -->
+  <!-- <script defer src="../dist/app.js"></script> -->
+  <!-- Local font-awesome and flag-icons -->
+  <!-- <link rel="stylesheet" href="../dist/app.css"> -->
+  <!-- Local tailwind css -->
+  <!-- <link rel="stylesheet" href="../dist/output.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/> -->
+  <!-- <script src="https://kit.fontawesome.com/edb9916da9.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style type="text/tailwindcss">
+    @layer components{
+      .hamburger div:first-child{
+        @apply rotate-45 translate-y-[0.330rem]
+      }
+
+      .hamburger div:last-child{
+        @apply -rotate-45 -translate-y-[0.330rem]
+      }
+
+      @keyframes appear-x {
+        0%, 100% {
+          transform: translateX(100%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+        99.99% {
+          transform: none;
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+      }
+      @keyframes appear-x-1 {
+        0%, 100% {
+          transform: translateX(100%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+        99.99% {
+          transform: translateX(-50%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+      }
+      @keyframes appear-x-2 {
+        0%, 100% {
+          transform: translateX(100%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+        99.99% {
+          transform: translateX(-100%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+      }
+      @keyframes appear-x-3 {
+        0%, 100% {
+          transform: translateX(100%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+        99.99% {
+          transform: translateX(-150%);
+          animation-timing-function: cubic-bezier(1,1,0,0);
+        }
+      }
+      .animate-appear-x {
+        animation: appear-x 2s;
+      }
+      .animate-appear-x-1 {
+        animation: appear-x-1 2s;
+      }
+      .animate-appear-x-2 {
+        animation: appear-x-2 2s;
+      }
+      .animate-appear-x-3 {
+        animation: appear-x-3 2s;
+      }
+
+      @keyframes tik-tok {
+        0%{
+          transform: rotate(0deg);
+        }
+        20%{
+          transform: rotate(45deg);
+        }
+        30%{
+          transform: rotate(-45deg);
+        }
+        40%{
+          transform: rotate(0deg);
+        }
+        50%{
+          transform: rotate(45deg);
+        }
+        60%{
+          transform: rotate(-45deg);
+        }
+        70%{
+          transform: rotate(0deg);
+        }
+        80%{
+          transform: rotate(45deg);
+        }
+        90%{
+          transform: rotate(-45deg);
+        }
+        100%{
+          transform: rotate(0deg);
+        }
+      }
+      .animate-tik-tok {
+        animation: tik-tok 2s linear infinite;
+      }
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          screens: {
+            'iPhoneSE': '375px',
+            'iPhoneXR': '414px',
+            'iPhone12Pro': '390px',
+            'GalaxyFold': '280px',
+            'smd': '695px',
+          },
+        },
+      }
+    }
+  </script>
+</head>
+<div x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
+$watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
+<body class="">
+    <div :class="{'dark': dark_mode === true}">
+      <div class="py-5 bg-white dark:bg-slate-800 text-gray-800 dark:text-white">
+        <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
+        <!-- Sidebar -->
+        <aside class="ml-5 my-5 max-h-screen w-80 rounded-lg bg-white dark:bg-slate-800 peer-checked:shadow-lg transition fixed inset-0 translate-x-[-107%] peer-checked:translate-x-0">
+          <div class="h-2 w-full rounded-t-lg bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600"></div>
+          <div class="border-b border-gray-400">
+            <a class="" href="/">
+              <img class="block dark:hidden h-20 my-5 mx-auto" src="../../src/images/logo-BPproject2x1-fuente-negro.svg" alt="">
+              <img class="hidden dark:block h-20 my-5 mx-auto" src="../../src/images/logo-BPproject2x1-fuente-blanco.svg" alt="">
+            </a>
+          </div>
+          <nav class="my-5 px-5">
+            <ul class="flex flex-col gap-3 w-full">
+              <li class="relative group flex flex-col w-full transition duration-200">
+                <div class="flex flex-row">
+                  <div class="-z-10 w-full h-10 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/30 group-hover:blur-lg"></div>
+                  <a href="#" class="absolute top-0 z-10 bg-transparent group-hover:scale-105 flex flex-row items-center w-full">
+                    <div class="w-1/4">
+                      <div class="mx-2 px-2 py-2 text-white text-center bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg">
+                        <i class="fa-solid fa-person-dress"></i>
+                      </div>
+                    </div>
+                    <div class="w-3/4 flex flex-row justify-between mx-5 text-gray-800 dark:text-white text-base font-medium">
+                      <div class="basis-3/4">
+                        <p class="">Candidatas</p>
+                      </div>
+                      <div class="basis-1/4 text-right">
+                        <i class="fa-solid fa-angle-down"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <ul class="hidden group-hover:block my-5 p-4 rounded-lg shadow transition duration-200">
+                  <li class="">
+                    <a href="#" class="py-2">
+                      <div class="flex flex-row gap-3 items-center">
+                        <div class="rounded-lg bg-gradient-to-r from-cyan-400 dark:from-cyan-200 to-blue-900 dark:to-blue-700 px-4 py-2 text-white">
+                          <i class="fa-solid fa-list"></i>
+                        </div>
+                        <p class="text-gray-800 dark:text-white text-base font-medium">Consultar candidatas</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#" class="py-2">
+                      <div class="flex flex-row gap-3 items-center">
+                        <div class="rounded-lg bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
+                          <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <p class="text-gray-800 dark:text-white text-base font-medium">Nueva candidata</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="relative group flex flex-row w-full transition duration-200">
+                <div class="-z-10 w-full h-10 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/30 group-hover:blur-lg"></div>
+                <a href="#" class="absolute top-0 z-10 bg-transparent group-hover:scale-105 flex flex-row items-center w-full">
+                  <div class="w-1/4">
+                    <div class="mx-2 px-2 py-2 text-white text-center bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg">
+                      <i class="fa-solid fa-flag"></i>
+                    </div>
+                  </div>
+                  <div class="w-3/4 mx-5 text-gray-800 dark:text-white text-base font-medium">
+                    <p class="">Comités nacionales</p>
+                  </div>
+                </a>
+              </li>
+              <li class="relative group flex flex-col w-full transition duration-200">
+                <div class="flex flex-row">
+                  <div class="-z-10 w-full h-10 group-hover:bg-rose-100 dark:group-hover:bg-rose-900/30 group-hover:blur-lg"></div>
+                  <a href="#" class="absolute top-0 z-10 bg-transparent group-hover:scale-105 flex flex-row items-center w-full">
+                    <div class="w-1/4">
+                      <div class="mx-2 px-2 py-2 text-white text-center bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg">
+                        <i class="fa-solid fa-newspaper"></i>
+                      </div>
+                    </div>
+                    <div class="w-3/4 flex flex-row justify-between mx-5 text-gray-800 dark:text-white text-base font-medium">
+                      <div class="basis-3/4">
+                        <p class="">Noticias</p>
+                      </div>
+                      <div class="basis-1/4 text-right">
+                        <i class="fa-solid fa-angle-down"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <ul class="hidden group-hover:block my-5 p-4 rounded-lg shadow transition duration-200">
+                  <li class="">
+                    <a href="#" class="py-2">
+                      <div class="flex flex-row gap-3 items-center">
+                        <div class="rounded-lg bg-gradient-to-r from-cyan-400 dark:from-cyan-200 to-blue-900 dark:to-blue-700 px-4 py-2 text-white">
+                          <i class="fa-solid fa-list"></i>
+                        </div>
+                        <p class="text-gray-800 dark:text-white text-base font-medium">Consultar noticias</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#" class="py-2">
+                      <div class="flex flex-row gap-3 items-center">
+                        <div class="rounded-lg bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
+                          <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <p class="text-gray-800 dark:text-white text-base font-medium">Nueva noticia</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        
+        <!-- cuerpo de la página -->
+        <div class="transition inset-0 translate-x-0 peer-checked:translate-x-[25%] bg-white dark:bg-slate-800">
+          <!-- navbar -->
+          <nav class="w-auto ml-5 mr-5 mb-5 h-14 bg-white dark:bg-slate-800 shadow-lg rounded-lg">
+            <div class="grid place-items-center h-auto">
+              <div class="w-11/12 flex flex-row justify-between items-center">
+                <div class="w-1/3 flex flex-row items-center">
+                  <div class="basis-1/4">
+                    <label for="hamburger" class="peer-checked:hamburger cursor-pointer transition rounded">
+                      <div class="h-0.5 w-6 bg-gray-600 dark:bg-white transition"></div>
+                      <div class="mt-2 h-0.5 w-6 bg-gray-600 dark:bg-white transition"></div>
+                    </label>
+                  </div>
+                  <div class="basis-3/4 flex items-center">
+                    <img class="block dark:hidden h-12 pt-2 transition" src="../../src/images/logo-BPproject-horizontal-fuente.svg" alt="">
+                    <img class="hidden dark:block h-12 pt-2 transition" src="../../src/images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+                  </div>
+                </div>
+                <div class="w-1/3 flex flex-row gap-5 justify-end items-center">
+                  <div class="flex flex-row text text-lg text-gray-800 dark:text-white font-medium">
+                    <img class="rounded-full h-7" src="images/user.jpg" alt="">
+                    <p class="mx-5">Administrador</p>
+                  </div>
+                  <div class="flex flex-row justify-center items-center">
+                    <label for="dark_check" class="inline-flex relative items-center cursor-pointer">
+                      <input @click="change_mode()" type="checkbox" :value="dark_mode" id="dark_check" class="sr-only peer">
+                      <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-rose-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-rose-700 transition duration-200"></div>
+                      <div x-show="!dark_mode" x-transition>
+                        <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-regular fa-sun"></i></span>
+                      </div>
+                      <div x-show="dark_mode" x-transition>
+                        <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-moon"></i></span>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="text-right">
+                    <i class="text-gray-800 dark:text-white fa-solid fa-right-from-bracket"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <!-- inicio -->
+          <div class="w-auto ml-5 mr-5 mb-5 bg-white dark:bg-slate-800 shadow-lg rounded-lg">
+            <div class="h-2 w-full rounded-t-lg bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600"></div>
+            <div class="flex flex-row justify-between border-b border-gray-400">
+              <div class="pl-5 pt-5 pb-3">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Inicio</h3>
+              </div>
+              <div class="pr-5 pt-5 pb-3">
+                <a class="text-base font-normal hover:text-rose-700 dark:hover:text-rose-400 hover:underline mr-2" href="#">Dashboard</a>/<a class="text-base font-normal text-rose-700 dark:text-rose-400 hover:text-rose-900 dark:hover:text-rose-600 hover:underline ml-2" href="#">Inicio</a>
+              </div>
+            </div>
+            <div class="mx-5 my-5">
+              <div class="grid grid-cols-3 gap-7 pb-5">
+                <div class="col-span-1">
+                  <div class="relative group w-full h-60 rounded-lg cursor-pointer">
+                    <div class="-z-10 translate-x-3 translate-y-3 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 blur-lg rounded-lg"></div>
+                    <div class="absolute top-0 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg"></div>
+                    <h1 class="absolute top-6 left-6 text-white text-4xl font-bold animate-appear-x">Candidatas</h1>
+                    <span class="absolute bottom-5 right-5 text-white/70 group-hover:text-white group-hover:scale-125 text-9xl transition">
+                      <i class="fa-solid fa-person-dress"></i>
+                    </span>
+                    <div class="absolute bottom-5 left-5 flex flex-row">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x border-2 border-white rounded-full w-24 h-24 object-cover object-center" src="images/candidatas/image-1.jpg" alt="">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x-1 border-2 border-white rounded-full z-10 -translate-x-14 w-24 h-24 object-cover object-center" src="images/candidatas/image-2.jpg" alt="">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x-2 border-2 border-white rounded-full z-20 -translate-x-28 w-24 h-24 object-cover object-center" src="images/candidatas/image-3.jpg" alt="">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x-3 border-2 border-white rounded-full z-30 -translate-x-[168px] w-24 h-24 object-cover object-center" src="images/candidatas/image-4.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-1">
+                  <div class="relative group w-full h-60 rounded-lg cursor-pointer">
+                    <div class="-z-10 translate-x-3 translate-y-3 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 blur-lg rounded-lg"></div>
+                    <div class="absolute top-0 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg"></div>
+                    <h1 class="absolute top-6 left-6 text-white text-4xl font-bold animate-appear-x">Comités nacionales</h1>
+                    <span class="absolute bottom-5 right-5 text-white/70 group-hover:text-white group-hover:scale-125 text-9xl transition">
+                      <i class="fa-solid fa-flag"></i>
+                    </span>
+                    <div class="absolute bottom-5 left-5 flex flex-row">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x border-2 border-white rounded-full w-24 h-24 object-cover object-center" src="images/comites nacionales/image-1.jpg" alt="">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x-1 border-2 border-white rounded-full z-10 -translate-x-14 w-24 h-24 object-cover object-center" src="images/comites nacionales/image-2.jpg" alt="">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x-2 border-2 border-white rounded-full z-20 -translate-x-28 w-24 h-24 object-cover object-center" src="images/comites nacionales/image-3.jpg" alt="">
+                      <img class="hidden group-hover:block group-hover:animate-appear-x-3 border-2 border-white rounded-full z-30 -translate-x-[168px] w-24 h-24 object-cover object-center" src="images/comites nacionales/image-4.jpg" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-1">
+                  <div class="relative group w-full h-60 rounded-lg cursor-pointer">
+                    <div class="-z-10 translate-x-3 translate-y-3 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 blur-lg rounded-lg"></div>
+                    <div class="absolute top-0 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg"></div>
+                    <h1 class="absolute top-6 left-6 text-white text-4xl font-bold animate-appear-x">Noticias</h1>
+                    <span class="absolute bottom-5 right-5 text-white/70 group-hover:text-white group-hover:scale-125 text-9xl transition">
+                      <i class="fa-solid fa-newspaper group-hover:animate-tik-tok"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-span-1">
+                  <div class="container relative w-full h-60">
+                    <video autoplay loop muted class="w-full h-60 -mb-[180px] rounded-lg object-cover object-top z-10">
+                      <source src="videos/video-1.mp4" type="video/mp4">
+                    </video>
+                    <!-- <div class="-z-20 translate-x-3 translate-y-3 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 blur-lg rounded-lg"></div> -->
+                    <div class="group w-full h-60 rounded-lg cursor-pointer">
+                      <div class="absolute top-0 shadow-2xl shadow-rose-800/90 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 group-hover:to-rose-900/40 dark:to-rose-600 group-hover:dark:to-rose-600/40 rounded-lg"></div>
+                      <h1 class="absolute top-6 left-6 text-white text-4xl font-bold animate-appear-x">Ediciones</h1>
+                      <span class="absolute bottom-5 right-5 text-white/70 block group-hover:hidden text-9xl transition">
+                        <i class="fa-solid fa-file-lines"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-span-1">
+                  <div class="relative w-full h-60 rounded-lg">
+                    <div class="-z-10 translate-x-3 translate-y-3 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 blur-lg rounded-lg"></div>
+                    <div class="absolute top-0 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg"></div>
+                    <!-- <h1 class="absolute top-0">dsfregtr</h1> -->
+                  </div>
+                </div>
+                <div class="col-span-1">
+                  <div class="relative w-full h-60 rounded-lg">
+                    <div class="-z-10 translate-x-3 translate-y-3 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 blur-lg rounded-lg"></div>
+                    <div class="absolute top-0 w-full h-full bg-gradient-to-r from-pink-600 dark:from-pink-300 to-rose-900 dark:to-rose-600 rounded-lg"></div>
+                    <!-- <h1 class="absolute top-0">dsfregtr</h1> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function data() {
+      return {
+        dark_mode: false,
+        change_mode(){
+          this.dark_mode = !this.dark_mode;
+        },
+      }
+    }
+  </script>
+</body>
+</html>
