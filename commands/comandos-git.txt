@@ -138,5 +138,23 @@ git tag -d v11.1
 //para que se termine de borrar el tag se debe hacer un push con el siguiente comando
 git push origin :refs/tags/v11.1
 //antes de mandar los tags se recomienda ejecutar el comando de pull para traerse todos la cambio que existan en el repositorio.
-//este comando indica traer todos los cambios a la rama main
+//este comando indica traer todos los cambios del repositorio a la rama main
 git pull origin main
+
+/*----------------- GIT BRANCHES --------------------*/
+//ver todos los commits de cada rama
+git show-branch --all
+//ver todos los cambios en las ramas de manera grafica
+gitk
+//hacer un push al repositorio en la nube de la rama en la que estoy
+git push origin develop
+
+/*------------------ AGREGAR COLABORADORES A GITHUB --------------------*/
+//clonar un repositorio
+git clone https://github.com/user1234/proyecto1
+//para subir cambios hechos en los archivos del repositorio clonado pide que se ingrese el usuario y la contraseña de github.
+//para gregar a nuevo colaborador
+Settings -> Manage access -> click boton [Invite a collaborator] -> buscar por el nombre de user en github.
+ ->luego este usuario debe aceptar la invitación por correo electronico
+//cuando se está trabajando en equipo se recomienda que antes de hacer un push a github se haga un pull de todos los cambios que se encuentren en la nube.
+//git pull origin main
