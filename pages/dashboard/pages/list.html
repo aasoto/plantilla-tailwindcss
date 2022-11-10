@@ -34,7 +34,7 @@
 <body x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
   <div :class="{'dark': dark_mode === true}">
-    <div class="py-3 bg-white dark:bg-slate-900 text-gray-800 dark:text-white">
+    <div class="relative py-3 bg-white dark:bg-slate-900 text-gray-800 dark:text-white">
       <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
       <!-- Sidebar -->
       <aside class="ml-7 sm:ml-5 my-5 max-h-screen w-80 rounded-lg bg-white dark:bg-slate-800 peer-checked:shadow-lg transition fixed inset-0 translate-x-[-107%] peer-checked:translate-x-0">
@@ -83,7 +83,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="#" class="py-2">
+                  <a href="add.html" class="py-2">
                     <div class="flex flex-row gap-3 items-center">
                       <div class="rounded-full bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
                         <i class="fa-solid fa-plus"></i>
@@ -153,7 +153,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
         </nav>
       </aside>
       <!-- cuerpo de la página -->
-      <div class="transition inset-0 translate-x-0 peer-checked:translate-x-[100%] sm:peer-checked:translate-x-[54%] md:peer-checked:translate-x-[45%] lg:peer-checked:translate-x-[34%] xl:peer-checked:translate-x-[27%] 2xl:peer-checked:translate-x-[25%] bg-white dark:bg-slate-900">
+      <div class="transition w-[96%] sm:w-auto inset-0 translate-x-0 peer-checked:translate-x-[100%] sm:peer-checked:translate-x-[54%] md:peer-checked:translate-x-[45%] lg:peer-checked:translate-x-[34%] xl:peer-checked:translate-x-[27%] 2xl:peer-checked:translate-x-[25%] bg-white dark:bg-slate-900">
         <!-- navbar -->
         <div class="relative h-64">
           <nav class="absolute top-5 left-0 right-0 z-10 w-auto ml-3 sm:ml-8 mr-3 sm:mr-8 mb-5 h-14 bg-white/70 dark:bg-slate-800/70 shadow-lg rounded-full">
@@ -178,7 +178,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                       <p class="mx-5"><span class="hidden sm:block">Administrador</span></p>
                     </div>
                     <div class="absolute -translate-x-8 w-60 h-8 bg-transparent"></div>
-                    <div class="absolute -translate-x-8 hidden group-hover:block mt-8 w-60 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-lg">
+                    <div class="absolute -translate-x-8 hidden group-hover:block mt-8 w-60 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl shadow-lg rounded-lg">
                       <div class="p-3 flex justify-center items-center">
                         <img class="w-20 h-20 rounded-full object-cover object-center" src="../images/user.jpg" alt="">
                       </div>
@@ -217,42 +217,43 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
               </div>
             </div>
           </nav>
-          <img class="absolute top-1.5 -z-10 w-[98%] h-80 object-cover rounded-2xl mx-3" src="../images/fondo-azul.svg" alt="">
-          <div class="absolute top-1/2 w-full">
-            <h1 class="text-center text-5xl font-bold text-white">Listado de candidatas</h1>
+          <div class="relative top-1.5 -z-10 w-auto h-80 rounded-2xl mx-3" style="background-image: url('../images/fondo-azul.svg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <div class="absolute top-1/2 w-full">
+              <h1 class="text-center text-3xl md:text-5xl font-bold text-white">Listado de candidatas</h1>
+            </div>
           </div>
         </div>
-        <div class="rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl mx-8 md:mx-14 px-4 md:px-10 w-auto shadow-lg">
+        <div class="rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl mx-5 sm:mx-8 md:mx-14 px-1 sm:px-4 md:px-10 w-auto shadow-lg">
           <!-- Candidatas -->
           <section>
             <!-- <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Concursantes</h2> -->
             <div class="pt-24 flex flex-col justify-center items-center">
               <div class="sticky top-5 md:top-18 z-[70] h-12 w-full bg-gray-300 rounded-full">
                 <div class="flex flex-row justify-center items-center text-xs iPhoneSE:text-base text-gray-800 font-bold">
-                  <div class="basis-3/12 px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal translate-x-4 md:translate-x-0">País</div>
-                  <div class="basis-3/12 px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">Concursante</div>
-                  <div class="basis-2/12 px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">Edad</div>
-                  <div class="basis-2/12 px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">Ciudad</div>
-                  <div class="basis-2/12 px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal -translate-x-4 md:translate-x-0">Acciones</div>
+                  <div class="basis-3/12 px-3 sm:px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal translate-x-4 md:translate-x-0">País</div>
+                  <div class="basis-3/12 px-3 sm:px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">Concursante</div>
+                  <div class="basis-2/12 px-3 sm:px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal hidden sm:block">Edad</div>
+                  <div class="basis-2/12 px-3 sm:px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">Ciudad</div>
+                  <div class="basis-2/12 px-3 sm:px-6 py-3 text-xs md:text-base break-words iPhoneSE:break-normal -translate-x-4 md:translate-x-0">Acciones</div>
                 </div>
               </div>
-              <table class="container mx-0 iPhoneSE:mx-5 md:mx-10 w-full">
+              <table class="container mx-0 iPhoneSE:mx-5 md:mx-10 w-[85%] sm:w-full">
                 <tbody class="w-full">
                   <template x-for="contestant in contestants">
                     <tr class="w-full border-b text-xs iPhoneSE:text-base border-gray-300">
-                      <td class="w-3/12 px-2 py-3 text-xs md:text-base font-bold break-words iPhoneSE:break-normal"><span><i :class="`fi fi-${contestant.flag} fis rounded-full scale-125`"></i></span> <span x-text="contestant.country"></span></td>
-                      <td class="w-3/12 px-2 py-3 text-xs md:text-base italic break-words iPhoneSE:break-normal" x-text="contestant.name"></td>
-                      <td class="w-2/12 px-2 py-3 text-xs md:text-base break-words iPhoneSE:break-normal" x-text="contestant.age"></td>
-                      <td class="w-2/12 px-2 py-3 text-xs md:text-base break-words iPhoneSE:break-normal" x-text="contestant.hometown"></td>
-                      <td class="w-2/12 px-2 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">
-                        <div class="flex flex-row">
+                      <td class="w-3/12 px-1 sm:px-2 py-3 text-xs md:text-base font-bold break-words iPhoneSE:break-normal"><span><i :class="`fi fi-${contestant.flag} fis rounded-full scale-125`"></i></span> <span x-text="contestant.country"></span></td>
+                      <td class="w-3/12 px-1 sm:px-2 py-3 text-xs md:text-base italic break-words iPhoneSE:break-normal" x-text="contestant.name"></td>
+                      <td class="w-2/12 px-1 sm:px-2 py-3 text-xs md:text-base break-words iPhoneSE:break-normal hidden sm:block" x-text="contestant.age"></td>
+                      <td class="w-2/12 px-1 sm:px-2 py-3 text-xs md:text-base break-words iPhoneSE:break-normal" x-text="contestant.hometown"></td>
+                      <td class="w-2/12 px-1 sm:px-2 py-3 text-xs md:text-base break-words iPhoneSE:break-normal">
+                        <div class="flex flex-col iPhoneSE:flex-row">
                           <button class="rounded-full my-1 py-1 md:py-2 px-2 md:px-3 bg-gradient-to-r from-cyan-500 to-blue-900 text-white">
                             <i class="scale-[0.6] md:scale-100 fa-solid fa-eye"></i>
                           </button>
                           <button class="rounded-full my-1 py-1 md:py-2 px-2 md:px-3 bg-gradient-to-r from-yellow-500 to-amber-600 text-white">
                             <i class="scale-[0.6] md:scale-100 fa-solid fa-pen"></i>
                           </button>
-                          <button class="rounded-full my-1 py-1 md:py-2 px-2 md:px-3 bg-gradient-to-r from-red-500 to-red-900 text-white">
+                          <button @click="delete_is_success()" class="rounded-full my-1 py-1 md:py-2 px-2 md:px-3 bg-gradient-to-r from-red-500 to-red-900 text-white">
                             <i class="scale-[0.6] md:scale-100 fa-solid fa-trash"></i>
                           </button>
                         </div>
@@ -265,7 +266,22 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
           </section>
         </div>
       </div>
-
+      <!-- Alert -->
+      <div x-show="delete_success" x-transition>
+        <div class="flex justify-center">
+          <div class="container z-50 fixed top-28 w-6/12 h-2/3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl shadow-lg rounded-lg">
+            <div class="text-green-500 text-center text-9xl">
+              <span><i class="my-10 fa-solid fa-check-circle"></i></span>
+            </div>
+            <h3 class="text-gray-800 dark:text-white my-6 text-3xl text-center font-bold">Usuario eliminado correctamente!</h3>
+            <div class="text-center">
+              <button class="mt-4 rounded-full py-3 px-6 text-white text-2xl font-semibold bg-blue-500">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     </div>
   </div>
 </body>
@@ -275,6 +291,10 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
       dark_mode: false,
       change_mode(){
         this.dark_mode = !this.dark_mode;
+      },
+      delete_success: false,
+      delete_is_success(){
+        this.delete_success = true;
       },
       contestants: [
         {
