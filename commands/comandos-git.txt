@@ -148,6 +148,8 @@ git show-branch --all
 gitk
 //hacer un push al repositorio en la nube de la rama en la que estoy
 git push origin develop
+//borrar una rama
+git branch -D develop
 
 /*------------------ AGREGAR COLABORADORES A GITHUB --------------------*/
 //clonar un repositorio
