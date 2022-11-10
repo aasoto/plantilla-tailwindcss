@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva candidata</title>
+  <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <style type="text/tailwindcss">
+    @layer components{
+      
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          screens: {
+            'iPhoneSE': '375px',
+            'iPhoneXR': '414px',
+            'iPhone12Pro': '390px',
+            'GalaxyFold': '280px',
+            'smd': '695px',
+          },
+        },
+      }
+    }
+  </script>
+</head>
+<body x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
+$watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
+  <div :class="{'dark': dark_mode === true}">
+    <div class="py-3 bg-white dark:bg-slate-900 text-gray-800 dark:text-white">
+      <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
+      <!-- Sidebar -->
+      <aside class="ml-7 sm:ml-5 my-5 max-h-screen w-80 rounded-lg bg-white dark:bg-slate-800 backdrop-blur-xl peer-checked:shadow-lg transition fixed inset-0 translate-x-[-107%] peer-checked:translate-x-0">
+        <div class="h-2 w-full rounded-t-lg bg-gradient-to-r from-lime-400 dark:from-lime-300 via-lime-700 dark:via-lime-500 to-green-800 dark:to-green-700"></div>
+        <div class="relative border-b border-gray-400">
+          <a class="" href="/">
+            <img class="block dark:hidden h-20 my-5 mx-auto" src="../../../src/images/logo-BPproject2x1-fuente-negro.svg" alt="">
+            <img class="hidden dark:block h-20 my-5 mx-auto" src="../../../src/images/logo-BPproject2x1-fuente-blanco.svg" alt="">
+          </a>
+          <label for="hamburger" class="absolute top-0 right-5 block sm:hidden peer-checked:hamburger cursor-pointer transition rounded">
+            <div class="text-gray-600 dark:text-white transition">
+              <i class="scale-150 fa-solid fa-times"></i>
+            </div>
+          </label>
+        </div>
+        <nav class="my-5 px-5">
+          <ul class="flex flex-col gap-3 w-full">
+            <li class="relative group flex flex-col w-full transition duration-200">
+              <div class="flex flex-row">
+                <div class="-z-10 w-full h-10 group-hover:bg-lime-200 dark:group-hover:bg-lime-900/30 group-hover:blur-lg"></div>
+                <a href="#" class="absolute top-0 z-10 bg-transparent group-hover:scale-105 flex flex-row items-center w-full">
+                  <div class="w-1/4">
+                    <div class="mx-2 px-2 py-2 text-white text-center bg-gradient-to-r from-lime-400 dark:from-lime-300 via-lime-700 dark:via-lime-500 to-green-800 dark:to-green-700 rounded-full">
+                      <i class="fa-solid fa-person-dress"></i>
+                    </div>
+                  </div>
+                  <div class="w-3/4 flex flex-row justify-between mx-5 text-gray-800 dark:text-white text-base font-medium">
+                    <div class="basis-3/4">
+                      <p class="">Candidatas</p>
+                    </div>
+                    <div class="basis-1/4 text-right">
+                      <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <ul class="hidden group-hover:block my-5 p-4 rounded-lg shadow transition duration-200">
+                <li class="">
+                  <a href="#" class="py-2">
+                    <div class="flex flex-row gap-3 items-center">
+                      <div class="rounded-full bg-gradient-to-r from-cyan-400 dark:from-cyan-200 to-blue-900 dark:to-blue-700 px-4 py-2 text-white">
+                        <i class="fa-solid fa-list"></i>
+                      </div>
+                      <p class="text-gray-800 dark:text-white text-base font-medium">Consultar candidatas</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="py-2">
+                    <div class="flex flex-row gap-3 items-center">
+                      <div class="rounded-full bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                      <p class="text-gray-800 dark:text-white text-base font-medium">Nueva candidata</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="relative group flex flex-row w-full transition duration-200">
+              <div class="-z-10 w-full h-10 group-hover:bg-lime-200 dark:group-hover:bg-lime-900/30 group-hover:blur-lg"></div>
+              <a href="#" class="absolute top-0 z-10 bg-transparent group-hover:scale-105 flex flex-row items-center w-full">
+                <div class="w-1/4">
+                  <div class="mx-2 px-2 py-2 text-white text-center bg-gradient-to-r from-lime-400 dark:from-lime-300 via-lime-700 dark:via-lime-500 to-green-800 dark:to-green-700 rounded-full">
+                    <i class="fa-solid fa-flag"></i>
+                  </div>
+                </div>
+                <div class="w-3/4 mx-5 text-gray-800 dark:text-white text-base font-medium">
+                  <p class="">Comités nacionales</p>
+                </div>
+              </a>
+            </li>
+            <li class="relative group flex flex-col w-full transition duration-200">
+              <div class="flex flex-row">
+                <div class="-z-10 w-full h-10 group-hover:bg-lime-200 dark:group-hover:bg-lime-900/30 group-hover:blur-lg"></div>
+                <a href="#" class="absolute top-0 z-10 bg-transparent group-hover:scale-105 flex flex-row items-center w-full">
+                  <div class="w-1/4">
+                    <div class="mx-2 px-2 py-2 text-white text-center bg-gradient-to-r from-lime-400 dark:from-lime-300 via-lime-700 dark:via-lime-500 to-green-800 dark:to-green-700 rounded-full">
+                      <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                  </div>
+                  <div class="w-3/4 flex flex-row justify-between mx-5 text-gray-800 dark:text-white text-base font-medium">
+                    <div class="basis-3/4">
+                      <p class="">Noticias</p>
+                    </div>
+                    <div class="basis-1/4 text-right">
+                      <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <ul class="hidden group-hover:block my-5 p-4 rounded-lg shadow transition duration-200">
+                <li class="">
+                  <a href="#" class="py-2">
+                    <div class="flex flex-row gap-3 items-center">
+                      <div class="rounded-full bg-gradient-to-r from-cyan-400 dark:from-cyan-200 to-blue-900 dark:to-blue-700 px-4 py-2 text-white">
+                        <i class="fa-solid fa-list"></i>
+                      </div>
+                      <p class="text-gray-800 dark:text-white text-base font-medium">Consultar noticias</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="mt-2">
+                  <a href="#" class="py-2">
+                    <div class="flex flex-row gap-3 items-center">
+                      <div class="rounded-full bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
+                        <i class="fa-solid fa-plus"></i>
+                      </div>
+                      <p class="text-gray-800 dark:text-white text-base font-medium">Nueva noticia</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- cuerpo de la página -->
+      <div class="transition inset-0 translate-x-0 peer-checked:translate-x-[100%] sm:peer-checked:translate-x-[54%] md:peer-checked:translate-x-[45%] lg:peer-checked:translate-x-[34%] xl:peer-checked:translate-x-[27%] 2xl:peer-checked:translate-x-[25%] bg-white dark:bg-slate-900">
+        <!-- navbar -->
+        <nav class="sticky md:absolute top-5 left-0 right-0 z-10 w-auto ml-3 sm:ml-8 mr-3 sm:mr-8 mb-5 h-14 bg-white/90 md:bg-white/70 dark:bg-slate-800/70 shadow-lg translate-x-2.5 sm:translate-x-0 rounded-full">
+          <div class="grid place-items-center h-auto">
+            <div class="w-11/12 flex flex-row justify-between items-center">
+              <div class="w-1/3 flex flex-row items-center">
+                <div class="basis-1/4">
+                  <label for="hamburger" class="peer-checked:hamburger cursor-pointer transition rounded">
+                    <div class="h-0.5 w-6 bg-gray-600 dark:bg-white transition"></div>
+                    <div class="mt-2 h-0.5 w-6 bg-gray-600 dark:bg-white transition"></div>
+                  </label>
+                </div>
+                <div class="basis-3/4 flex items-center">
+                  <img class="ml-2 sm:ml-0 block dark:hidden h-12 pt-2 transition" src="../../../src/images/logo-BPproject-horizontal-fuente.svg" alt="">
+                  <img class="ml-2 sm:ml-0 hidden dark:block h-12 pt-2 transition" src="../../../src/images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+                </div>
+              </div>
+              <div class="w-1/3 flex flex-row gap-5 justify-end items-center">
+                <div class="group">
+                  <div class="flex flex-row text text-lg text-gray-800 dark:text-white font-medium">
+                    <img class="rounded-full h-7" src="../images/user.jpg" alt="">
+                    <p class="mx-5"><span class="hidden sm:block">Administrador</span></p>
+                  </div>
+                  <div class="absolute -translate-x-8 w-60 h-8 bg-transparent"></div>
+                  <div class="absolute -translate-x-20 md:-translate-x-8 hidden group-hover:block mt-8 w-60 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl rounded-lg shadow-lg">
+                    <div class="p-3 flex justify-center items-center">
+                      <img class="w-20 h-20 rounded-full object-cover object-center" src="../images/user.jpg" alt="">
+                    </div>
+                    <div class="p-3">
+                      <h1 class="text-xl text-center font-semibold text-gray-800 dark:text-white">Mariana de Havilland</h1>
+                      <h5 class="text-xs text-left font-light mt-4 text-gray-500 dark:text-white/70">Manage Team</h5>
+                      <div class="border-b border-gray-400 mb-3"></div>
+                      <p class="text-base font-normal text-gray-800 dark:text-white">Team Settings</p>
+                      <p class="text-base font-normal text-gray-800 dark:text-white">Create New Team</p>
+                      <h5 class="text-xs text-left font-light mt-4 text-gray-500 dark:text-white/70">Switch teams</h5>
+                      <div class="border-b border-gray-400 mb-3"></div>
+                      <p class="text-base font-normal text-gray-800 dark:text-white"><span class="text-green-600"><i class="fa-solid fa-check-circle"></i></span> Mariana's Team</p>
+                      <h5 class="text-xs text-left font-light mt-4 text-gray-500 dark:text-white/70">Manage Account</h5>
+                      <div class="border-b border-gray-400 mb-3"></div>
+                      <p class="text-base font-normal text-gray-800 dark:text-white">Profile</p>
+                      <p class="text-base font-normal text-gray-800 dark:text-white">API Tokens</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-row justify-center items-center">
+                  <label for="dark_check" class="inline-flex relative items-center cursor-pointer">
+                    <input @click="change_mode()" type="checkbox" :value="dark_mode" id="dark_check" class="sr-only peer">
+                    <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-lime-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-lime-500 transition duration-200"></div>
+                    <div x-show="!dark_mode" x-transition>
+                      <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-regular fa-sun"></i></span>
+                    </div>
+                    <div x-show="dark_mode" x-transition>
+                      <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-solid fa-moon"></i></span>
+                    </div>
+                  </label>
+                </div>
+                <div class="text-right">
+                  <i class="text-gray-800 dark:text-white fa-solid fa-right-from-bracket"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="-mt-20 md:mt-0 relative h-64">
+          <img class="absolute top-1.5 -z-10 w-[95%] lg:w-[98%] h-80 object-cover rounded-2xl mx-5 lg:mx-3" src="../images/fondo-verde.svg" alt="">
+          <div class="absolute top-1/2 w-full">
+            <h1 class="text-center text-3xl md:text-5xl font-bold text-white">Agregar candidata</h1>
+          </div>
+        </div>
+        <div class="rounded-xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl mx-auto sm:mx-8 md:mx-16 lg:mx-32 px-10 w-[90%] sm:w-auto translate-x-3 sm:translate-x-0 shadow-lg">
+          <!-- Candidatas -->
+          <section class="pt-32">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 dark:gap-9">
+              <div class="col-span-1 lg:col-span-2 relative">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="country">País</label>
+                <select name="country" id="country" class="w-full rounded-full border-2 bg-transparent border-gray-500 dark:border-white px-10 py-2">
+                  <option value="">Colombia</option>
+                  <option value="">Estado Unidos</option>
+                  <option value="">Francia</option>
+                  <option value="">Rusia</option>
+                </select>
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="first_name">
+                  Primer nombre</label>
+                <input class="w-full rounded-full border-2 bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
+                  name="first_name" type="text">
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="first_name">
+                  Segundo nombre</label>
+                <input class="w-full rounded-full border-2 bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
+                  name="second_name" type="text">
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="first_name">
+                  Primer apellido</label>
+                <input class="w-full rounded-full border-2 bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
+                  name="last_first_name" type="text">
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="first_name">
+                  Segundo apellido</label>
+                <input class="w-full rounded-full border-2 bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
+                  name="last_second_name" type="text">
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="country">
+                  Genero</label>
+                <select name="genre" id="genre" class="w-full rounded-full border-2 bg-transparent border-gray-500 dark:border-white px-10 py-2">
+                  <option value="">Femenino</option>
+                  <option value="">Másculino</option>
+                </select>
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="first_name">
+                  Fecha nacimiento</label>
+                <input class="w-full rounded-full border-2 bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
+                  name="birthdate" type="date">
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="country">
+                  Comité nacional</label>
+                <select name="genre" id="genre" class="w-full rounded-full border-2 bg-transparent border-gray-500 dark:border-white px-10 py-2">
+                  <option value="">Miss Universe Colombia</option>
+                  <option value="">Miss USA</option>
+                  <option value="">Miss Venezuela</option>
+                  <option value="">Miss Universe Philipinnes</option>
+                </select>
+              </div>
+              <div class="col-span-1">
+                <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="first_name">
+                  Foto oficial</label>
+                <input class="w-full rounded-full border-2 bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
+                  name="last_second_name" type="file">
+              </div>
+            </div>
+            <div class="mt-6 py-6 w-full flex justify-center items-center">
+              <button class="rounded-full w-2/3 px-4 py-3 text-white font-bold bg-gradient-to-l from-lime-400 via-lime-500 to-green-900 hover:scale-110 transition">Guardar</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  function data() {
+    return {
+      dark_mode: false,
+      change_mode(){
+        this.dark_mode = !this.dark_mode;
+      },
+    }
+  }
+</script>
+</html>
