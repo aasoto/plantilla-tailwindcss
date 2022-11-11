@@ -32,7 +32,7 @@
   </script>
 </head>
 <body x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
-$watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
+$watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)));">
   <div :class="{'dark': dark_mode === true}">
     <div class="relative py-3 bg-white dark:bg-slate-900 text-gray-800 dark:text-white">
       <input type="checkbox" name="hamburger" id="hamburger" class="peer" hidden>
@@ -138,7 +138,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="#" class="py-2">
+                  <a href="add-news.html" class="py-2">
                     <div class="flex flex-row gap-3 items-center">
                       <div class="rounded-full bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
                         <i class="fa-solid fa-plus"></i>
@@ -167,8 +167,10 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                     </label>
                   </div>
                   <div class="basis-3/4 flex items-center">
-                    <img class="ml-2 sm:ml-0 block dark:hidden h-12 pt-2 transition" src="../../../src/images/logo-BPproject-horizontal-fuente.svg" alt="">
-                    <img class="ml-2 sm:ml-0 hidden dark:block h-12 pt-2 transition" src="../../../src/images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+                    <a href="../index.html">
+                      <img class="ml-2 sm:ml-0 block dark:hidden h-12 pt-2 transition" src="../../../src/images/logo-BPproject-horizontal-fuente.svg" alt="">
+                      <img class="ml-2 sm:ml-0 hidden dark:block h-12 pt-2 transition" src="../../../src/images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+                    </a>
                   </div>
                 </div>
                 <div class="w-1/3 flex flex-row gap-5 justify-end items-center">
@@ -211,7 +213,9 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                     </label>
                   </div>
                   <div class="text-right">
-                    <i class="text-gray-800 dark:text-white fa-solid fa-right-from-bracket"></i>
+                    <a href="../../login.html">
+                      <i class="text-gray-800 dark:text-white fa-solid fa-right-from-bracket"></i>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -275,7 +279,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
             </div>
             <h3 class="text-gray-800 dark:text-white my-6 text-3xl text-center font-bold">Usuario eliminado correctamente!</h3>
             <div class="text-center">
-              <button class="mt-4 rounded-full py-3 px-6 text-white text-2xl font-semibold bg-blue-500">Aceptar</button>
+              <button @click="delete_close()" class="mt-4 rounded-full py-3 px-6 text-white text-2xl font-semibold bg-blue-500">Aceptar</button>
             </div>
           </div>
         </div>
@@ -294,7 +298,10 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
       },
       delete_success: false,
       delete_is_success(){
-        this.delete_success = true;
+        this.delete_success = !this.delete_success;
+      },
+      delete_close(){
+        this.delete_success = !this.delete_success;
       },
       contestants: [
         {
