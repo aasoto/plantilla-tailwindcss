@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agregar noticia</title>
   <!-- Local alpine.js -->
-  <script defer src="../../../dist/app.js"></script>
+  <!-- <script defer src="../../../dist/app.js"></script> -->
   <!-- Local font-awesome and flag-icons -->
-  <link rel="stylesheet" href="../../../dist/app.css">
+  <!-- <link rel="stylesheet" href="../../../dist/app.css"> -->
   <!-- Local tailwind css -->
-  <link rel="stylesheet" href="../../../dist/output.css">
-  <!-- <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
-  <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.css"> -->
-  <!-- <script src="../../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script> -->
-  <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="stylesheet" href="../../../dist/output.css"> -->
+  <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.css">
+  <script src="../../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style type="text/tailwindcss">
     @layer components{
       
@@ -36,7 +36,7 @@
         },
       }
     }
-  </script> -->
+  </script>
 </head>
 <body x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
@@ -306,6 +306,10 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
   </div>
 </body>
 <script>
+  ClassicEditor.create( document.querySelector( '.ckeditor' ) )
+    .catch( error => {
+      console.error( error );
+    } );
   function data() {
     return {
       dark_mode: false,
