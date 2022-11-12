@@ -49,13 +49,13 @@
                         <a href="../index.html">
                             <div class="block dark:hidden">
                                 <img class="hidden md:block w-[200px] md:w-auto h-[60px] md:h-[40px] -my-7 md:my-0"
-                                    src="../src/images/logo-BPproject-horizontal-fuente.svg" alt="">
+                                    :src="`${logo_modo_diurno}`" alt="">
                                 <img class="block md:hidden w-[200px] md:w-auto h-[60px] md:h-[40px] -my-7 md:my-0"
-                                    src="../src/images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+                                    :src="`${logo_modo_nocturno}`" alt="">
                             </div>
                             <div class="hidden dark:block">
                                 <img class="w-[200px] md:w-auto h-[60px] md:h-[40px] -my-7 md:my-0"
-                                    src="../src/images/logo-BPproject-horizontal-fuente-blanco.svg" alt="">
+                                    :src="`${logo_modo_nocturno}`" alt="">
                             </div>
                         </a>
                     </div>
@@ -113,6 +113,8 @@
 <script>
     function data() {
         return {
+            logo_modo_diurno: 'images/logo-BPproject-horizontal-fuente.svg',
+            logo_modo_nocturno: 'images/logo-BPproject-horizontal-fuente-blanco.svg',
             images: [
                 {
                     image: 'images/login/image-1.jpg',
