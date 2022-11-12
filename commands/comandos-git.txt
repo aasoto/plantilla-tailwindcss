@@ -1,0 +1,142 @@
+/*----------------- CÓMO MOVERSE EN LA LINEA DE COMANDOS ----------------*/
+//ver todos los archivos del disco
+ls-l 
+//limpiar la consola
+clear
+//saber en que lugar estoy
+pwd
+//cambiar de disco
+cd G:
+//ver todo lo que hay dentro del disco y para ver las carpetas
+ls
+//cambiar de directorio anterior
+cd ..
+
+/*------------- COMANDOS BASICOS DE GIT ---------------*/
+//crear archivo de texto plano
+touch archivo.txt
+//ver todo lo que está dentro del archivo
+cat archivo.txt
+//ver lista de todos los comandos que se han utilizado
+history
+//para ejecutar un comando que aparece en el historial de comandos !{número del comando en lista} ej:
+!324
+//borrar un archivo desde la consola (no se puede recuperar)
+rm archivo.txt
+
+/*------------- INICIAR SESIÓN EN GIT ----------------*/
+//poner nombre de usuario de git
+git config --global user.name "user1999"
+//poner el email de usuario de git
+git config --global user.email "user1999@gmail.com"
+
+/*------------ INICIALIZAR UN REPOSITORIO CON GIT ------------*/
+//iniciar un repositorio
+git init
+//si se inicia un repositorio por error, la forma de eliminarlo es utilizando el siguinete comando
+rm -rf .git (borra la carpeta .git)
+//mostrar el estatus de los archivos
+git status
+//para empezar a guardar los cambios en el repositorio, en profundidad quiere decir que estos cambios pasan a un estado llamado staging que una memoria donde quedan guardados antes de hacer el commit, todo lo que no esté en staging no se agregará al commit.
+git add archivo.txt
+git add .
+//quitar archivo que se encuentra agregado despues del add
+git rm --cached archivo.txt
+//agregar nuevo commit
+git commit -m "mensaje del commit"
+//agregar commit sin haber pasado los cambios al staging o sin haber ejecutado el comando git add
+git commit -a (despues de este comando se abre vim para que se escriba el mensaje del commit, agregar = "esc i", salir = "esc :wq", abortar commit = "esc :q!")
+//agregar commit sin haber ejecutado el git add y con mensaje rapido (sin abrir vim)
+git commit -am "mensaje del commit"
+//ver el historial de commits
+git log
+//ver el historial de commits y los cambios hechos en cada uno de los commits
+git log --stat
+//para ver más commits se puede hacer con la tecla espacio
+//si existen muchos commits y no se puede llegar al final de la lista facilmente solo es presionar la letra q y el curso lleva al final
+q
+//cambiar de commit {donde el número al final es el código del commit subido}
+**cuando se cambia de commit se crear una rama temporal con todos los cambios guardados en ese commit**
+git checkout e49r8gr93fehdwfjerk4938f9efj3h498f
+//para regresar al último commit "git checkout {nombre de la rama}". ej:
+git checkout master
+//para ver todas las ramas existentes en el repositorio
+git branch
+//mostrar lo que se cambió de un commit a otro (muestra las diferencias del commit actual en comparación con el commit anterior).
+git show
+
+/*------------- SALIR DE VIM ------------*/
+//esta es la consola que se abre cuando no se le coloca un mensaje al commit de git.
+//puede utilizarse a proposito para escribir un commit de varias lineas.
+//para ingresar el mensaje se debe pulsar la letra i y luego empezar a escribir el mensaje del commit.
+esc i ("insertar")
+//salir forma 1
+esc :wq
+//salir forma 2
+esc shift zz
+//abortar commit
+esc :q!
+
+/*-------------- DIFERENCIAS ENTRE COMMITS ----------*/
+//al momentos de ejecutar el comando es importante el orden de los commit primero el más antiguo y despues el más reciente (git diff "código del más antiguo" "código del más reciente").
+git diff f430fk4095kf 3920r9fjie03jf4093
+
+/*--------------- GIT RESET ----------------------*/
+//este comando sirve para borrar los commits hechos, muy util al momento de romper el código y regresar a un commit donde este código aún estaba funcionando. Borrar commits
+git reset 22ac43e246b43 --hard //borra todos los commits hechos despues del commit indicado y situa a la persona en el commit indicado.
+git reset 22ac43e246b43 --soft //borrar todos los commits despues del indicado pero deja los cambios hechos despues de ese commit en staging, es decir como si no se hubiese ejecutado el comando "git add"
+
+/*-------------------- RAMAS BRANCH -----------------*/
+//ver la ramas existentes en el repositorio
+git branch
+//crear una rama (git branch "nombre de la rama")
+git branch develop
+//moverse a otra rama
+git checkout develop
+//para hacer un git merge se debe situar en la rama que se desea actualizar "estando en la rama master para traer los cambios que se hicieron en la rama develop ejecutar en siguiente comando":
+git merge develop
+//para ver ramas de commits
+git log --all --graph
+//ver ramas de los commits pero comprimidos
+git log --all --graph --decorate --oneline
+
+/*----------------- RESOLUCIÓN DE CONFLICTOS ------------------*/
+//un conflicto es cuando dos progrmaadores hacen cambios en la misma parte del código y al mometo de hacer un merge estás dos lineas de encuentran modificadas.
+//acto seguido se crea una nueva rama para solucionar el conflicto. (master|MERGING)
+//esta es una rama provisional donde se escojen las lineas correctas y se confirma por medio de un commit y al final la rama provisional se borrar y se situa en la rama donde se hizo el merge
+
+/*------------------- GITHUB --------------------*/
+//eliminar el origin en un repositorio existente, es decir repositorio de github
+git remote remove origin
+//agregar nuevo repositorio
+git remote add origin https://github.com/user123/repository.git
+
+/*----------------- GIT PULL --------------------------*/
+//traer todos los cambios que se encuentren en el repositorio a mi rama ejemplo: me encuentro en la rama develop y quiero traer todos lo cambios que ha hecho alguien mas y ya se encuentran en la rama main ejecuto el siguiente comando
+git pull origin main
+//si en la ejecución del comando anterior ocurrió un error ejecutar:
+git pull origin main --allow-unrelated-histories
+
+/*--------------- ALIAS -------------*/
+//crear un alias (alias "nombre para el comando"="comando de git")
+alias ramas="git log --all --graph --decorate --oneline"
+//eliminar un alias
+unalias ramas
+/*------------------- GIT TAGS -----------------*/
+//agregar un tag
+git tag -a v1.0 -m "primera versión de la app"
+//ver todas las tags
+git tag
+//para asignar tag a una commit en especifico (al final debe llevar el código del commit)
+git tag -a v0.1 -m "primera versión" de2ce34
+//ver que referencia tienen los tags 
+git show-ref --tags
+//mandar los tags hecho para el repositorio
+git push origin --tags
+//eliminar tag
+git tag -d v11.1
+//para que se termine de borrar el tag se debe hacer un push con el siguiente comando
+git push origin :refs/tags/v11.1
+//antes de mandar los tags se recomienda ejecutar el comando de pull para traerse todos la cambio que existan en el repositorio.
+//este comando indica traer todos los cambios a la rama main
+git pull origin main

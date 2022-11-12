@@ -11,8 +11,8 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/> -->
   <!-- <script src="https://kit.fontawesome.com/edb9916da9.js" crossorigin="anonymous"></script> -->
   <!-- <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
-  <link rel="stylesheet" href="../node_modules/flag-icons/css/flag-icons.min.css"> -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../node_modules/flag-icons/css/flag-icons.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style type="text/tailwindcss">
     @layer components{
@@ -43,12 +43,6 @@
       darkMode: "class",
       theme: {
         extend: {
-          colors: {
-            clifford: '#da373d',
-          },
-          fontFamily: {
-            'delmon-delicate': ['DelmonDelicate'],
-          },
           screens: {
             'iPhoneSE': '375px',
             'iPhoneXR': '414px',
@@ -64,11 +58,11 @@
   <div x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
   $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
     <div :class="{'dark': dark_mode === true}">
-      <div class="relative bg-white dark:bg-slate-800 text-slate-800 dark:text-white">
+      <div class="relative bg-white dark:bg-slate-900 text-slate-800 dark:text-white">
         <!-- Navegación -->
         <nav class="z-20 fixed top-0 md:top-4 2xl:top-7 w-full">
           <div
-            class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-lg shadow-gray-800 dark:shadow-gray-400 backdrop-blur-xl bg-white/50 dark:bg-slate-800 py-7 md:py-2">
+            class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-l backdrop-blur-xl bg-white/50 dark:bg-slate-800/70 py-7 md:py-2">
             <div class="z-20 ml-7">
               <a href="../">
                 <div class="block dark:hidden">
@@ -89,7 +83,7 @@
             <div
               class="w-full mt-24 md:mt-0 rounded-md md:rounded-none shadow md:shadow-none shadow-gray-800 transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:translate-x-0 md:flex-row">
               <div
-                class="flex flex-col md:flex-row md:items-center px-6 md:px-0 md:pt-0 mr-0 md:mr-7 bg-white/80 md:bg-transparent dark:bg-slate-800">
+                class="flex flex-col md:flex-row md:items-center px-6 md:px-0 md:pt-0 mr-0 md:mr-7 bg-white/80 md:bg-transparent dark:bg-slate-800 dark:md:bg-transparent">
                 <div class="group">
                   <div
                     class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white cursor-pointer px-[26px]">
@@ -138,7 +132,7 @@
                 <div class="flex flex-row justify-center items-center">
                   <label for="dark_check" class="inline-flex relative items-center cursor-pointer">
                     <input @click="change_mode()" type="checkbox" :value="dark_mode" id="dark_check" class="sr-only peer">
-                    <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-rose-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-rose-700 transition duration-200"></div>
+                    <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-rose-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 transition duration-200"></div>
                     <div x-show="!dark_mode" x-transition>
                       <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-regular fa-sun"></i></span>
                     </div>
@@ -161,21 +155,23 @@
         </section>
         <!-- End of Background -->
         <!-- Cuerpo de la página -->
-        <section class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 backdrop-blur-none md:backdrop-blur-xl dark:backdrop-blur-none bg-white/50 dark:bg-slate-800 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 py-32">
+        <section class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 backdrop-blur-none md:backdrop-blur-xl bg-white/50 dark:bg-slate-800/50 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 dark:md:shadow-black py-32">
           <!-- Infomración general y resultados -->
           <section>
             <div class="flex flex-col md:flex-row">
               <!-- Resumen -->
               <div class="basis-2/3 border-r-0 md:border-r border-gray-400">
                 <div class="container mx-auto -mt-24 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
-                  <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Miss universo 2014</h1>
-                  <h2 class="text-xl md:text-2xl mb-4 font-medium text-center text-rose-700 dark:text-rose-300">63va edición del certamen de belleza de Miss Universo</h2>
+                  <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Miss universo 2014</h1>
+                  <h2 class="text-xl md:text-2xl mb-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">63va edición del certamen de belleza de Miss Universo</h2>
                 </div>
                 <div class="mx-1 iPhoneSE:mx-5 sm:mx-8" x-html="description"></div>
-                <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Resultados</h2>
+                <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Resultados</h2>
                 <div class="flex flex-col justify-center items-center my-8">
                   <div class="relative w-60 iPhoneSE:w-72 h-60 iPhoneSE:h-72">
-                    <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${winner[0].image}`" alt="">
+                    <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                      <img class="w-full h-full object-cover object-top rounded-full" :src="`${winner[0].image}`" alt="">
+                    </div>
                     <span class="absolute bottom-7 left-7"><i :class="`fi fi-${winner[0].flag} fis rounded-full scale-[5]`"></i></span>
                   </div>
                   <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="winner[0].position"></p>
@@ -183,12 +179,14 @@
                   <p class="text-xl font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="winner[0].country"></p>
                 </div>
                 <div class="border-b border-gray-400 mx-10"></div>
-                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Finalistas</h2>
+                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Finalistas</h2>
                 <div class="flex flex-col xl:flex-row gap-2 justify-center items-center my-8">
                   <div class="flex flex-row gap-2 my-3">
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${first_runner_up[0].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${first_runner_up[0].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${first_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="first_runner_up[0].position"></p>
@@ -197,7 +195,9 @@
                     </div>
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${second_runner_up[0].image}`" alt="">
+                      <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                        <img class="w-full h-full object-cover object-top rounded-full" :src="`${second_runner_up[0].image}`" alt="">
+                      </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${second_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="second_runner_up[0].position"></p>
@@ -208,7 +208,9 @@
                   <div class="flex flex-row gap-2 my-3">
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${thrid_runner_up[0].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${thrid_runner_up[0].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${thrid_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="thrid_runner_up[0].position"></p>
@@ -217,7 +219,9 @@
                     </div>
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${fourth_runner_up[0].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${fourth_runner_up[0].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${fourth_runner_up[0].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="fourth_runner_up[0].position"></p>
@@ -227,13 +231,15 @@
                   </div>
                 </div>
                 <div class="border-b border-gray-400 mx-10"></div>
-                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Semifinalistas (Top 10)</h2>
+                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Semifinalistas (Top 10)</h2>
                 <div class="flex flex-col gap-2 justify-center items-center my-8">
                   <div class="flex flex-col lg:flex-row gap-2 my-3">
                     <div class="basis-2/3 flex flex-row gap-2">
                       <div class="basis-1/2 flex flex-col justify-center items-center">
                         <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                          <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[0].image}`" alt="">
+                          <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                            <img class="w-full h-full object-cover object-top rounded-full" :src="`${semifinalists[0].image}`" alt="">
+                          </div>
                           <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[0].flag} fis rounded-full scale-[3]`"></i></span>
                         </div>
                         <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[0].position"></p>
@@ -242,7 +248,9 @@
                       </div>
                       <div class="basis-1/2 flex flex-col justify-center items-center">
                         <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                          <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[1].image}`" alt="">
+                          <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                            <img class="w-full h-full object-cover object-top rounded-full" :src="`${semifinalists[1].image}`" alt="">
+                          </div>
                           <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[1].flag} fis rounded-full scale-[3]`"></i></span>
                         </div>
                         <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[1].position"></p>
@@ -252,7 +260,9 @@
                     </div>
                     <div class="basis-1/3 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[2].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${semifinalists[2].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[2].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[2].position"></p>
@@ -263,7 +273,9 @@
                   <div class="flex flex-row gap-2 my-3">
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[3].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${semifinalists[3].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[3].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[3].position"></p>
@@ -272,7 +284,9 @@
                     </div>
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${semifinalists[4].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${semifinalists[4].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${semifinalists[4].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="semifinalists[4].position"></p>
@@ -282,13 +296,15 @@
                   </div>
                 </div>
                 <div class="border-b border-gray-400 mx-10"></div>
-                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Cuatrofinalistas (Top 15)</h2>
+                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Cuatrofinalistas (Top 15)</h2>
                 <div class="flex flex-col gap-2 justify-center items-center my-8">
                   <div class="flex flex-col lg:flex-row gap-2 my-3">
                     <div class="basis-2/3 flex flex-row gap-2">
                       <div class="basis-1/2 flex flex-col justify-center items-center">
                         <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                          <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[0].image}`" alt="">
+                          <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                            <img class="w-full h-full object-cover object-top rounded-full" :src="`${top_15[0].image}`" alt="">
+                          </div>
                           <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[0].flag} fis rounded-full scale-[3]`"></i></span>
                         </div>
                         <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[0].position"></p>
@@ -297,7 +313,9 @@
                       </div>
                       <div class="basis-1/2 flex flex-col justify-center items-center">
                         <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                          <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[1].image}`" alt="">
+                          <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                            <img class="w-full h-full object-cover object-top rounded-full" :src="`${top_15[1].image}`" alt="">
+                          </div>
                           <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[1].flag} fis rounded-full scale-[3]`"></i></span>
                         </div>
                         <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[1].position"></p>
@@ -307,7 +325,9 @@
                     </div>
                     <div class="basis-1/3 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[2].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${top_15[2].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[2].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[2].position"></p>
@@ -318,7 +338,9 @@
                   <div class="flex flex-row gap-2 my-3">
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[3].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${top_15[3].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[3].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[3].position"></p>
@@ -327,7 +349,9 @@
                     </div>
                     <div class="basis-1/2 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${top_15[4].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${top_15[4].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${top_15[4].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="top_15[4].position"></p>
@@ -337,13 +361,15 @@
                   </div>
                 </div>
                 <div class="border-b border-gray-400 mx-10"></div>
-                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Premios especiales</h2>
+                <h2 class="text-lg md:text-xl my-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Premios especiales</h2>
                 <div class="flex flex-col gap-2 justify-center items-center my-8">
                   <div class="flex flex-col lg:flex-row gap-2 my-3">
                     <div class="basis-2/3 flex flex-row gap-2">
                       <div class="basis-1/2 flex flex-col justify-center items-center">
                         <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                          <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${special_awards[0].image}`" alt="">
+                          <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                            <img class="w-full h-full object-cover object-top rounded-full" :src="`${special_awards[0].image}`" alt="">
+                          </div>
                           <span class="absolute bottom-5 left-5"><i :class="`fi fi-${special_awards[0].flag} fis rounded-full scale-[3]`"></i></span>
                         </div>
                         <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="special_awards[0].position"></p>
@@ -352,7 +378,9 @@
                       </div>
                       <div class="basis-1/2 flex flex-col justify-center items-center">
                         <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                          <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${special_awards[1].image}`" alt="">
+                          <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                            <img class="w-full h-full object-cover object-top rounded-full" :src="`${special_awards[1].image}`" alt="">
+                          </div>
                           <span class="absolute bottom-5 left-5"><i :class="`fi fi-${special_awards[1].flag} fis rounded-full scale-[3]`"></i></span>
                         </div>
                         <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="special_awards[1].position"></p>
@@ -362,7 +390,9 @@
                     </div>
                     <div class="basis-1/3 flex flex-col justify-center items-center">
                       <div class="relative w-32 iPhoneSE:w-40 sm:w-48 h-32 iPhoneSE:h-40 sm:h-48">
-                        <img class="w-full h-full object-cover object-top rounded-full border-8 border-rose-700 dark:border-rose-300" :src="`${special_awards[2].image}`" alt="">
+                        <div class="rounded-full w-full h-full p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                          <img class="w-full h-full object-cover object-top rounded-full" :src="`${special_awards[2].image}`" alt="">
+                        </div>
                         <span class="absolute bottom-5 left-5"><i :class="`fi fi-${special_awards[2].flag} fis rounded-full scale-[3]`"></i></span>
                       </div>
                       <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700" x-text="special_awards[2].position"></p>
@@ -376,13 +406,13 @@
               <div class="basis-1/3">
                 <div class="container mx-auto -mt-0 md:-mt-20 py-5 md:py-10 w-full iPhoneSE:w-10/12 md:w-8/12">
                   <div class="block md:hidden border-b border-gray-400 mx-5"></div>
-                  <h2 class="block md:hidden text-xl my-4 font-bold text-center text-rose-700 dark:text-rose-300">Propietario</h2>
+                  <h2 class="block md:hidden text-xl my-4 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Propietario</h2>
                   <img @click="open_owner()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" :src="`${owner[0].logo_light}`" alt="">
                   <img @click="open_owner()" class="hidden dark:block scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" :src="`${owner[0].logo_dark}`" alt="">
                 </div>
                 <div class="mx-auto py-5 w-10/12 md:w-8/12">
                   <div class="block md:hidden border-b border-gray-400 mx-5"></div>
-                  <h2 class="block md:hidden text-xl my-4 font-bold text-center text-rose-700 dark:text-rose-300">Canales de televisión</h2>
+                  <h2 class="block md:hidden text-xl my-4 font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Canales de televisión</h2>
                   <div class="flex flex-row gap-3">
                     <div class="container basis-1/2 flex items-center">
                       <img @click="open_broadcaster()" class="block dark:hidden scale-75 md:scale-100 hover:scale-110 md:hover:scale-125 transition duration-200 cursor-pointer" :src="`${main_broadcaster[0].logo_light}`" alt="">
@@ -509,7 +539,7 @@
           <div class="border-b border-gray-400 mx-10 my-6"></div>
           <!-- Candidatas -->
           <section>
-            <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-rose-700 dark:text-rose-300">Concursantes</h2>
+            <h2 class="text-xl md:text-2xl my-4 font-medium text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Concursantes</h2>
             <div class="flex justify-center items-center ">
               <table class="container mx-0 iPhoneSE:mx-5 md:mx-10 w-full">
                 <thead class="sticky top-20 md:top-18 z-[70] w-full bg-gray-300 text-xs iPhoneSE:text-base rounded-full text-gray-800">
@@ -551,7 +581,8 @@
         <!-- End of Cuerpo de página -->
         <!-- Modals -->
         <div x-show="show_info_owner" x-transition>
-          <div @click="close_owner()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
+          <div x-html="modal_owner()"></div>
+          <!-- <div @click="close_owner()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
           </div>
           <div class="flex justify-center">
             <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white dark:bg-slate-800 dark:shadow-lg dark:shadow-gray-400 rounded-lg">
@@ -567,10 +598,11 @@
                 <div x-html="owner[0].content"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div x-show="show_info_broadcaster" x-transition>
-          <div @click="close_broadcaster()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
+          <div x-html="modal_main_broadcaster()"></div>
+          <!-- <div @click="close_broadcaster()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
           </div>
           <div class="flex justify-center">
             <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white dark:bg-slate-800 dark:shadow-lg dark:shadow-gray-400 rounded-lg">
@@ -588,10 +620,11 @@
                 <div x-html="main_broadcaster[0].content"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div x-show="show_info_broadcaster_2" x-transition>
-          <div @click="close_broadcaster_2()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
+          <div x-html="modal_secondary_broadcaster()"></div>
+          <!-- <div @click="close_broadcaster_2()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-black/60">
           </div>
           <div class="flex justify-center">
             <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white dark:bg-slate-800 dark:shadow-lg dark:shadow-gray-400 rounded-lg">
@@ -609,7 +642,7 @@
                 <div x-html="secondary_broadcaster[0].content"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- end of Modals -->
         <!-- Footer -->
@@ -883,18 +916,82 @@
         name: 'The Trump organization',
         content: 'The Trump Organization (en español: La Organización Trump) es una empresa estadounidense, con sede en Manhattan, Nueva York. Se dedica a la gestión de propiedades y hoteles en diferentes países del mundo, así como al desarrollo de diversos proyectos de construcción y bienes inmuebles. Su director ejecutivo era Donald Trump pero fue destituido quien también es accionista mayoritario y fue Presidente de los Estados Unidos entre 2017 y 2021.'
       }],
+      modal_owner() {
+        return `
+        <div @click="close_owner()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-transparent">
+        </div>
+        <div class="flex justify-center">
+          <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl shadow-lg rounded-lg">
+            <div class="flex w-full h-1/6">
+              <div class="w-10/12 md:w-11/12 pl-7 flex items-center text-gray-800 dark:text-white text-xl font-bold">`+this.owner[0].name+`</div>
+              <div class="w-2/12 md:w-1/12 flex justify-center items-center">
+                <i @click="close_owner()" class="fa-solid fa-xmark text-gray-800 dark:text-white hover:text-white hover:bg-red-500 hover:rounded-full hover:py-1 hover:px-2 cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="container w-full h-5/6 py-8 px-8 md:px-16 text-base font-normal text-gray-800 dark:text-white overflow-auto text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              <img class="block dark:hidden px-0 md:px-48 mb-10" src="`+this.owner[0].logo_light+`" alt="">
+              <img class="hidden dark:block px-0 md:px-48 mb-10" src="`+this.owner[0].logo_dark+`" alt="">
+              <div>`+this.owner[0].content+`</div>
+            </div>
+          </div>
+        </div>`;
+      },
       main_broadcaster: [{
         logo_light: 'images/nbc-day.svg',
         logo_dark: 'images/nbc-dark.svg',
         name: 'National Broadcasting Company - NBC',
         content: '<p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">National Broadcasting Company (NBC, pronunciación en inglés: /en.bi.si/; traducido al español como Compañía Nacional de Radiodifusión) es una cadena de televisión —y anteriormente, también de radio— comercial de origen estadounidense, con sede en el 30 Rockefeller Plaza en el Rockefeller Center de la ciudad de Nueva York y otras oficinas principales en Los Ángeles y Chicago. La cadena es una de las más grandes en todo el territorio estadounidense y, a veces, se le denomina como la Peacock Network (lit. «Cadena del Pavo Real») debido a su logotipo estilizado, que se asemeja a un pavo real. Su primera versión fue creada originalmente para promocionar las emisiones en color de la cadena.</p><p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">Formada en 1926 por la Radio Corporation of America (RCA), la NBC es la más antigua cadena de radiodifusión importante en los Estados Unidos. En 1986, el control de la NBC pasó a la General Electric Company (GE), cuando ésta compró RCA por 6,4 mil millones de dólares estadounidenses. Anteriormente, y hasta 1930, GE había sido el propietario tanto de RCA como de la NBC, hasta que se vio obligada a vender la empresa como resultado de cargos antimonopolio.</p><p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">Después de dicha adquisición en 1986, Bob Wright fue nombrado director ejecutivo de la cadena hasta su jubilación, dando posteriormente su posición a Jeff Zucker. La cadena es actualmente una división de la empresa de medios NBCUniversal, una filial de Comcast; anteriormente formó parte de un joint venture con General Electric, desde 2011 hasta 2013,1​ y antes aún estuvo bajo propiedad conjunta de GE y Vivendi. Como resultado de la fusión, Zucker dejó la NBC y fue reemplazado por Steve Burke, ejecutivo de Comcast.</p><p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">La NBC es productora de una multitud de programas de televisión, propietaria de 13 estaciones de televisión y afiliada a alrededor de otras 200 en los Estados Unidos y sus territorios, y es la empresa matriz de varias cadenas de televisión por cable y por satélite e inversiones en activades de Internet y de otras formas de multimedia. La NBC es también responsable de la emisión de los Premios Globo de Oro, la segunda ceremonia más importante en la industria del cine. Gran parte del archivo de emisiones de las emisoras de su propiedad se encuentra disponible para lectura y compra a través de los «NBCUniversal Archives».</p>'
       }],
+      modal_main_broadcaster() {
+        return `
+        <div @click="close_broadcaster()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-transparent">
+        </div>
+        <div class="flex justify-center">
+          <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl shadow-lg rounded-lg">
+            <div class="flex w-full h-1/6">
+              <div class="w-10/12 md:w-11/12 pl-7 flex items-center text-gray-800 dark:text-white text-xl font-bold">`+this.main_broadcaster[0].name+`</div>
+              <div class="w-2/12 md:w-1/12 flex justify-center items-center">
+                <i @click="close_broadcaster()" class="fa-solid fa-xmark text-gray-800 dark:text-white hover:text-white hover:bg-red-500 hover:rounded-full hover:py-1 hover:px-2 cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="container w-full h-5/6 py-8 px-8 md:px-16 text-base font-normal text-gray-800 dark:text-white overflow-auto text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              <div class="flex justify-center">
+                <img class="block dark:hidden px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="`+this.main_broadcaster[0].logo_light+`" alt="">
+                <img class="hidden dark:block px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="`+this.main_broadcaster[0].logo_dark+`" alt="">
+              </div>
+              <div>`+this.main_broadcaster[0].content+`</div>
+            </div>
+          </div>
+        </div>`;
+      },
       secondary_broadcaster: [{
         logo_light: 'images/telemundo-day.svg',
         logo_dark: 'images/telemundo-dark.svg',
         name: 'Telemundo',
         content: '<p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">Telemundo es una cadena de televisión terrestre estadounidense que transmite en idioma español propiedad de Comcast a través de NBCUniversal. Es el segundo mayor proveedor de contenido en español en los Estados Unidos solo por detrás de su competidor estadounidense Univision, con programación distribuida en todo el mundo a más de 100 países en más de 35 idiomas.</p><p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">El canal transmite programas y contenido original dirigido a audiencias hispanohablantes en los Estados Unidos y en todo el mundo, que consisten en telenovelas, deportes, Reality Shows, programación de noticias y películas, importadas o dobladas al español. Además, Telemundo opera a NBC Universo, un canal separado dirigido a un público hispano joven; Telemundo Digital Media, que distribuye contenido de programación original a través de los medios de comunicación, los sitios web de Telemundo y NBC Universo; la estación de transmisión gratuita WKAQ-TV de Puerto Rico; y la división de distribución internacional Telemundo Internacional.</p><p class="text-base font-normal text-gray-800 dark:text-white text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">Telemundo tiene su sede en el suburbio de Beacon Lakes en Miami, Florida y cuenta con 1900 empleados en todo el mundo. La mayoría de los programas de Telemundo se filman en una instalación de estudio operada en Miami, donde el 85 % de las telenovelas de la red se filmaron durante 2011. El drama promedio por hora en horario estelar cuesta 70 000 USD para producirse.</p>'
       }],
+      modal_secondary_broadcaster() {
+        return `
+        <div @click="close_broadcaster_2()" class="z-40 absolute top-0 left-0 right-0 bottom-0 bg-transparent">
+        </div>
+        <div class="flex justify-center">
+          <div class="container z-50 fixed top-28 w-10/12 h-2/3 bg-white/70 dark:bg-slate-800/70 backdrop-blur-xl shadow-lg rounded-lg">
+            <div class="flex w-full h-1/6">
+              <div class="w-10/12 md:w-11/12 pl-7 flex items-center text-gray-800 dark:text-white text-xl font-bold">`+this.secondary_broadcaster[0].name+`</div>
+              <div class="w-2/12 md:w-1/12 flex justify-center items-center">
+                <i @click="close_broadcaster_2()" class="fa-solid fa-xmark text-gray-800 dark:text-white hover:text-white hover:bg-red-500 hover:rounded-full hover:py-1 hover:px-2 cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="container w-full h-5/6 py-8 px-8 md:px-16 text-base font-normal text-gray-800 dark:text-white overflow-auto text-justify leading-relaxed selection:bg-rose-300 dark:selection:bg-rose-700">
+              <div class="flex justify-center">
+                <img class="block dark:hidden px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="`+this.secondary_broadcaster[0].logo_light+`" alt="">
+                <img class="hidden dark:block px-0 md:px-48 mb-10 w-2/3 object-cover object-center" src="`+this.secondary_broadcaster[0].logo_dark+`" alt="">
+              </div>
+              <div>`+this.secondary_broadcaster[0].content+`</div>
+            </div>
+          </div>
+        </div>`;
+      },
       sede_final: [{
         lugar: 'FIU Arena, Miami, Florida, ',
         country: 'Estados Unidos',

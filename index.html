@@ -11,9 +11,9 @@
   <script defer src="dist/app.js"></script>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/> -->
   <!-- <script src="https://kit.fontawesome.com/edb9916da9.js" crossorigin="anonymous"></script> -->
-  <!-- <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css"> -->
-  <!-- <link rel="stylesheet" href="node_modules/flag-icons/css/flag-icons.min.css"> -->
-  <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="node_modules/flag-icons/css/flag-icons.min.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style type="text/tailwindcss">
     @layer components{
@@ -31,12 +31,6 @@
       darkMode: "class",
       theme: {
         extend: {
-          colors: {
-            clifford: '#da373d',
-          },
-          fontFamily: {
-            'delmon-delicate': ['DelmonDelicate'],
-          },
           screens: {
             'iPhoneSE': '375px',
             'iPhoneXR': '414px',
@@ -57,7 +51,7 @@
         <!-- Navegación -->
         <nav class="z-20 fixed top-0 md:top-4 2xl:top-7 w-full">
           <div
-            class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-lg shadow-gray-800 dark:shadow-gray-400 backdrop-blur-xl bg-white/50 dark:bg-slate-800 py-7 md:py-2">
+            class="flex flex-row justify-between items-center rounded-none md:rounded-md mx-0 md:mx-7 shadow dark:shadow-lg backdrop-blur-xl bg-white/50 dark:bg-slate-800/70 py-7 md:py-2">
             <div class="z-20 ml-7">
               <div class="block dark:hidden">
                 <img class="w-[200px] md:w-auto h-[60px] md:h-[40px] -my-7 md:my-0" :src="`${logo_modo_diurno}`" alt="">
@@ -76,14 +70,13 @@
             <div
               class="w-full mt-24 md:mt-0 rounded-md md:rounded-none shadow md:shadow-none shadow-gray-800 transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:translate-x-0 md:flex-row">
               <div
-                class="flex flex-col md:flex-row md:items-center px-6 md:px-0 md:pt-0 mr-0 md:mr-7 bg-white/80 md:bg-transparent dark:bg-slate-800">
+                class="flex flex-col md:flex-row md:items-center px-6 md:px-0 md:pt-0 mr-0 md:mr-7 bg-white/80 md:bg-transparent dark:bg-transparent">
                 <div class="group">
-                  <div
-                    class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white cursor-pointer px-[26px]">
-                    <span>Ediciones</span><i class="fa-solid fa-chevron-down ml-2"></i></div>
+                  <div class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white cursor-pointer px-[26px]">
+                    <span>Ediciones</span><i class="fa-solid fa-chevron-down ml-2"></i>
+                  </div>
                   <div class="md:absolute">
-                    <div
-                      class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-7 p-0 md:p-4 rounded-none md:rounded-md transition">
+                    <div class="hidden group-hover:block w-full shadow-none md:shadow dark:md:shadow-lg md:shadow-gray-800 dark:md:shadow-gray-400 backdrop-blur-none md:backdrop-blur-xl bg-transparent md:bg-white/70 dark:md:bg-slate-800 mt-1 md:mt-7 p-0 md:p-4 rounded-none md:rounded-md transition">
                       <ul class="text-center border-t-2 border-b-2 border-rose-600 dark:border-rose-300">
                         <a href="pages/editions.html">
                           <li
@@ -125,7 +118,7 @@
                 <div class="flex flex-row justify-center items-center">
                   <label for="dark_check" class="inline-flex relative items-center cursor-pointer">
                     <input @click="change_mode()" type="checkbox" :value="dark_mode" id="dark_check" class="sr-only peer">
-                    <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-rose-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-rose-700 transition duration-200"></div>
+                    <div class="w-9 h-5 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-rose-700 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 transition duration-200"></div>
                     <div x-show="!dark_mode" x-transition>
                       <span class="ml-3 text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white"><i class="fa-regular fa-sun"></i></span>
                     </div>
@@ -173,19 +166,21 @@
         </section>
         <!-- Cuerpo de la página -->
         <section
-          class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 pt-32 pb-20 backdrop-blur-none md:backdrop-blur-xl dark:backdrop-blur-none bg-white/50 dark:bg-slate-800 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400">
+          class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 pt-32 pb-20 backdrop-blur-none md:backdrop-blur-xl bg-white/50 dark:bg-slate-800/70 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 dark:md:shadow-black">
           <!-- Sección de ganadoras actuales -->
           <section>
             <div class="container mx-auto -mt-24 md:-mt-20 py-5 md:py-10 w-10/12 md:w-8/12">
-              <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Actuales
+              <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Actuales
                 ganadoras de los certamenes de belleza más importantes</h1>
             </div>
-            <div class="mx-10 my-10 flex flex-row gap-2 md:gap-4">
+            <div class="mx-5 sm:mx-10 my-10 flex flex-row gap-2 md:gap-4">
               <template x-for="titleholder in current_titleholders">
                 <div @click = "show_info_titleholder(titleholder)" class="basis-1/3 container flex flex-col justify-center items-center">
                   <div class="relative flex flex-col items-center justify-center">
-                    <img class="rounded-full border-4 md:border-8 border-rose-600 w-32 md:w-60 h-32 md:h-60 object-cover object-center cursor-pointer" :src="`${titleholder.image}`" alt="">
-                    <span class="absolute bottom-3 md:bottom-6 left-3 md:left-6"><i :class="`fi fi-${titleholder.flag} fis rounded-full scale-[3] cursor-pointer`"></i></span>
+                    <div class="rounded-full w-16 iPhoneSE:w-24 sm:w-32 md:w-44 lg:w-60 h-16 iPhoneSE:h-24 sm:h-32 md:h-44 lg:h-60 p-1 md:p-2 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
+                      <img class="rounded-full w-full h-full object-cover object-center cursor-pointer" :src="`${titleholder.image}`" alt="">
+                    </div>
+                    <span class="absolute bottom-0 sm:bottom-3 md:bottom-6 left-0 sm:left-3 md:left-6"><i :class="`fi fi-${titleholder.flag} fis rounded-full scale-[2] sm:scale-[3] cursor-pointer`"></i></span>
                   </div>
                 </div>
               </template>
@@ -201,47 +196,51 @@
           </section>
           <!-- fin Sección de ganadoras actuales -->
           <!-- Sección de noticias -->
-          <section class="my-8 px-12">
+          <section class="my-8 px-6 sm:px-12">
             <div class="container mx-auto py-5 md:py-10 w-10/12 md:w-8/12">
-              <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Últimas
+              <h1 class="text-2xl md:text-3xl mb-4 font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Últimas
                 noticias</h1>
             </div>
             <div class="grid grid-cols-4 gap-4">
               <template x-for="item in latest_news">
                 <div class="col-span-4 lg:col-span-2 2xl:col-span-1">
-                  <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
-                    <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer"
-                      :src="`${item.image}`" alt="">
-                    <div class="px-4">
-                      <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer"
-                        x-text="item.title"></h3>
-                      <p class="text-base text-justify pb-4 cursor-pointer" x-text="item.description"></p>
+                  <a href="pages/read-news.html">
+                    <div class="flex flex-col xl:flex-row 2xl:flex-col w-full rounded-md shadow-md hover:shadow-gray-400 hover:scale-105 transition">
+                      <img class="w-full xl:w-1/2 2xl:w-full h-full xl:h-64 2xl:h-1/2 rounded-t-md xl:rounded-l-md 2xl:rounded-t-md object-cover object-center cursor-pointer"
+                        :src="`${item.image}`" alt="">
+                      <div class="px-4">
+                        <h3 class="text-lg sm:text-xl mb-4 font-medium text-left hover:text-rose-700 hover:underline cursor-pointer"
+                          x-text="item.title"></h3>
+                        <p class="text-base text-justify pb-4 cursor-pointer" x-text="item.description"></p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </template>
             </div>
             <div class="mt-7">
-              <h2 class="text-xl font-bold text-rose-700 dark:text-rose-300 hover:underline cursor-pointer text-center">Ver más noticias</h2>
+              <h2 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 hover:underline cursor-pointer text-center">Ver más noticias</h2>
             </div>
           </section>
           <!-- Ediciones recomendadas -->
           <section class="my-5 md:container">
-            <div class="flex flex-col md:flex-row mx-10 w-auto container">
+            <div class="flex flex-col md:flex-row mx-5 sm:mx-10 w-auto container">
               <div class="basis-0 md:basis-1/2">
-                <h1 class="sticky top-28 z-50 text-2xl md:text-3xl mb-4 font-semibold text-center text-rose-700 dark:text-rose-300">Ediciones destacadas</h1>
+                <h1 class="sticky top-28 z-50 text-2xl md:text-3xl mb-4 font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">Ediciones destacadas</h1>
               </div>
               <div class="basis-0 md:basis-2/3 container">
                 <template x-for="edition in recommended_editions">
-                  <div class="container relative w-full h-72 my-4 rounded-lg cursor-pointer">
-                    <img class="rounded-lg w-full h-full object-cover object-top" :src="`${edition.bg_image}`" alt="">
-                    <div class="absolute top-0 z-10 bg-gradient-to-t from-black to-transparent rounded-lg w-full h-full"></div>
-                    <img class="absolute top-4 right-4 z-20 rounded-lg h-1/3 hover:mt-4 hover:animate-bounce transition" :src="`${edition.logo}`" alt="">
-                    <div class="absolute bottom-2 flex flex-col-reverse z-20 h-2/3 px-3">
-                      <p class="text-white font-light text-base" x-text="edition.description"></p>
-                      <h2 class="text-white font-bold text-2xl" x-text="edition.name"></h2>
+                  <a href="pages/editions.html">
+                    <div class="container relative w-full h-72 my-4 rounded-lg cursor-pointer">
+                      <img class="rounded-lg w-full h-full object-cover object-top" :src="`${edition.bg_image}`" alt="">
+                      <div class="absolute top-0 z-10 bg-gradient-to-t from-black to-transparent rounded-lg w-full h-full"></div>
+                      <img class="absolute top-4 right-4 z-20 rounded-lg h-1/3 hover:mt-4 hover:animate-bounce transition" :src="`${edition.logo}`" alt="">
+                      <div class="absolute bottom-2 flex flex-col-reverse z-20 h-2/3 px-3">
+                        <p class="text-white font-light text-base" x-text="edition.description"></p>
+                        <h2 class="text-white font-bold text-2xl" x-text="edition.name"></h2>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </template>
               </div>
             </div>
