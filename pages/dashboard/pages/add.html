@@ -5,7 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nueva candidata</title>
-  <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <!-- Local alpine.js -->
+  <script defer src="../../../dist/app.js"></script>
+  <!-- Local font-awesome and flag-icons -->
+  <link rel="stylesheet" href="../../../dist/app.css">
+  <!-- Local tailwind css -->
+  <link rel="stylesheet" href="../../../dist/output.css">
+  <!-- <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
   <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -29,7 +35,7 @@
         },
       }
     }
-  </script>
+  </script> -->
 </head>
 <body x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">

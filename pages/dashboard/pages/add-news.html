@@ -5,11 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agregar noticia</title>
-  <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
-  <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.css">
-  <script src="../../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Local alpine.js -->
+  <script defer src="../../../dist/app.js"></script>
+  <!-- Local font-awesome and flag-icons -->
+  <link rel="stylesheet" href="../../../dist/app.css">
+  <!-- Local tailwind css -->
+  <link rel="stylesheet" href="../../../dist/output.css">
+  <!-- <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+  <link rel="stylesheet" href="../../../node_modules/flag-icons/css/flag-icons.css"> -->
+  <!-- <script src="../../../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script> -->
+  <!-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script>
   <style type="text/tailwindcss">
     @layer components{
       
@@ -30,7 +36,7 @@
         },
       }
     }
-  </script>
+  </script> -->
 </head>
 <body x-data="data()" x-init="dark_mode = JSON.parse(localStorage.getItem('dark_mode'));
 $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(value)))">
@@ -74,7 +80,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
               </div>
               <ul class="hidden group-hover:block my-5 p-4 rounded-lg shadow transition duration-200">
                 <li class="">
-                  <a href="#" class="py-2">
+                  <a href="list.html" class="py-2">
                     <div class="flex flex-row gap-3 items-center">
                       <div class="rounded-full bg-gradient-to-r from-cyan-400 dark:from-cyan-200 to-blue-900 dark:to-blue-700 px-4 py-2 text-white">
                         <i class="fa-solid fa-list"></i>
@@ -84,7 +90,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="#" class="py-2">
+                  <a href="add.html" class="py-2">
                     <div class="flex flex-row gap-3 items-center">
                       <div class="rounded-full bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
                         <i class="fa-solid fa-plus"></i>
@@ -139,7 +145,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                   </a>
                 </li>
                 <li class="mt-2">
-                  <a href="#" class="py-2">
+                  <a href="add-news.html" class="py-2">
                     <div class="flex flex-row gap-3 items-center">
                       <div class="rounded-full bg-gradient-to-r from-lime-400 dark:from-lime-200 to-green-900 dark:to-green-700 px-4 py-2 text-white">
                         <i class="fa-solid fa-plus"></i>
@@ -253,7 +259,7 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
                 <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="content">
                   Contenido de la noticia</label>
                 <div class="z-10 w-full rounded-3xl border-2 text-gray-800 bg-white dark:bg-transparent border-gray-500 dark:border-white px-0.5 py-3">
-                  <div id="content"></div>
+                  <div class="ckeditor" id="content"></div>
                 </div>
               </div>
               <div class="col-span-1 relative">
@@ -300,11 +306,6 @@ $watch('dark_mode', value => localStorage.setItem('dark_mode', JSON.stringify(va
   </div>
 </body>
 <script>
-  ClassicEditor.create( document.querySelector( '#content' ) )
-    .catch( error => {
-      console.error( error );
-    } );
-  
   function data() {
     return {
       dark_mode: false,
