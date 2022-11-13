@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contenido noticia</title>
+  <title>Listado de noticias</title>
   <!-- <link rel="stylesheet" href="../dist/output.css">
   <link rel="stylesheet" href="../dist/app.css">
   <script defer src="../dist/app.js"></script> -->
@@ -104,7 +104,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="list_news.html"
+                <a href=""
                   class="my-4 md:my-0 ml-0 md:ml-7 text-center text-base font-medium hover:scale-110 transition text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-white">Noticias</a>
                 <div class="group">
                   <div
@@ -144,154 +144,66 @@
         </nav>
         <!-- End of navegación -->
         <!-- Cover -->
-        <!-- <section class="-z-10 absolute top-0 w-full">
-          <div class="w-full h-96">
-            <img class="w-full h-full object-cover object-center" src="dashboard/images/fondo-pink.svg" alt="">
-          </div>
-        </section> -->
-        <!-- End of Cover -->
         <div class="flex flex-col justify-center items-center w-full min-h-[384px] max-h-screen" style="background-image: url('dashboard/images/fondo-pink.svg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
           <div class="w-full h-20"></div>
           <h1 class="mx-10 my-5 z-10 text-center text-2xl iPhoneSE:text-3xl md:text-5xl font-bold text-white">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, beatae?
+            Listado de Noticias
           </h1>
           <h3 class="mx-10 mt-5 mb-16 z-10 text-center text-2xl iPhoneSE:text-xl md:text-3xl font-bold text-white">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, et possimus. Eligendi officiis illo culpa corrupti quibusdam nostrum porro reprehenderit.
+            Listado general con todas las noticias de publicadas en la página
           </h3>
         </div>
+        <!-- End of Cover -->
         <!-- Cuerpo página -->
         <section class="mt-0 md:-mt-8 lg:-mt-14 mx-0 md:mx-7 pt-12 md:pt-32 pb-20 backdrop-blur-none md:backdrop-blur-xl bg-white/50 dark:bg-slate-800/70 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 dark:md:shadow-black/20">
-          <div class="grid grid-cols-1 md:grid-cols-6 gap-3 mx-5 md:mx-10">
-            <div class="col-span-1">
-              <div class="sticky top-10">
-                <div class="flex flex-col items-center">
-                  <h2 class="text-xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
-                    Autor
-                  </h2>
-                  <div class="rounded-full p-1.5 bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 w-40 h-40 md:w-32 md:h-32 lg:w-40 lg:h-40">
-                    <img class="rounded-full w-full h-full object-cover object-center" src="dashboard/images/user.jpg" alt="">
-                  </div>
-                  <p class="text-base font-medium text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
-                    Mariana De Havilland
-                  </p>
-                  <p class="text-base italic font-light text-gray-800 dark:text-white text-center selection:bg-rose-300 dark:selection:bg-rose-700">
-                    Colombia
-                  </p>
-                </div>
-                <div class="absolute bottom-16 left-32 md:left-6">
-                  <span class="w-full h-full"><i class="fi fi-co fis rounded-full scale-[2.5]"></i></span>
-                </div>
-              </div>
-            </div>
-            <div class="col-span-1 md:col-span-5 px-0 md:px-5">
-              <div class="relative w-full">
-                <img class="blur-xl w-full h-none md:h-[33vh] lg:h-[66vh] rounded-lg object-cover object-top" src="images/imagen-noticia.jpg" alt="">
-                <img class="absolute top-0 left-0 z-10 w-full h-none md:h-[33vh] lg:h-[66vh] rounded-lg object-cover object-top" src="images/imagen-noticia.jpg" alt="">
-              </div>
-              <div class="mt-12 info-texto" x-html="content"></div>
-            </div>
-          </div>
-        </section>
-        <!-- Cuerpo página -->
-        <!-- Comentarios -->
-        <section class="mt-5 mx-0 md:mx-7 py-5 backdrop-blur-none md:backdrop-blur-xl bg-white/50 dark:bg-slate-800/70 rounded-none md:rounded-md shadow-none md:shadow-lg md:shadow-gray-400 dark:md:shadow-black/20">
-          <div class="grid grid-cols-1 md:grid-cols-6 gap-3 mx-5 md:mx-10">
-            <div class="col-span-1">
-              <div class="sticky top-20">
-                <h1 class="text-2xl md:text-lg lg:text-3xl mb-4 font-semibold text-left text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600">
-                  Comentarios
-                </h1>
-              </div>
-            </div>
-            <div class="col-span-1 md:col-span-5">
-              <div class="flex flex-row w-full gap-4 mt-0 dark:mt-5 mb-5">
-                <div class="basis-5/6">
-                  <label class="absolute text-md text-gray-500 dark:text-white bg-white dark:bg-transparent px-4 translate-x-8 dark:translate-x-3 -translate-y-3 dark:-translate-y-7" for="comment_text">
-                    Comenta aquí</label>
-                  <input class="w-full rounded-full border bg-white dark:bg-transparent border-gray-500 dark:border-white px-4 py-2" 
-                    name="comment_text" type="text">
-                </div>
-                <div class="basis-1/6">
-                  <button class="rounded-full w-full px-5 py-2 text-white text-base font-bold bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-400 dark:to-rose-700 hover:scale-110 transition">Comentar</button>
-                </div>
-              </div>
-              <div class="w-full border border-gray-500 rounded-3xl">
-                <div class="px-5 py-2.5">
-                  <div class="flex flex-row py-2.5 group">
-                    <div class="basis-1/6 group-hover:basis-2/12 flex justify-center items-center">
-                      <img class="rounded-full w-10 md:w-16 h-10 md:h-16" src="images/users comments/user-1.jpg" alt="">
-                    </div>
-                    <div class="basis-5/6 group-hover:basis-8/12 flex flex-col justify-center items-start">
-                      <h4 class="text-base font-medium text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Helenita Torres de Alba
-                      </h4>
-                      <p class="ml-5 text-base font-light text-gray-800 dark:text-white text-left selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam neque eum vel aperiam dolorem?
-                      </p>
-                    </div>
-                    <div class="hidden group-hover:block basis-2/12">
-                      <div class="flex flex-row gap-2 justify-center items-center">
-                        <button class="rounded-full px-3 py-2 bg-gradient-to-r from-yellow-400 to-amber-500 text-white"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button class="rounded-full px-3 py-2 bg-gradient-to-r from-red-400 to-red-900 text-white"><i class="fa-solid fa-trash"></i></button>
+          <div class="grid grid-cols-1 2xl:grid-cols-2 gap-5 mx-5 md:mx-20">
+            <template x-for="news in latest_news">
+              <div class="col-span-1">
+                <a href="read-news.html">
+                  <div class="rounded-lg h-auto md:h-60 shadow-lg hover:shadow-black/20 hover:scale-[1.02] transition duration-200">
+                    <div class="flex flex-col md:flex-row h-full">
+                      <div class="basis-1/2 md:basis-1/3">
+                        <img class="rounded-t-lg md:rounded-l-lg w-full h-full object-cover object-center cursor-pointer" :src="`${news.image}`" alt="">
+                      </div>
+                      <div class="basis-1/2 md:basis-2/3 px-5 py-3">
+                        <h2 class="text-lg sm:text-xl md:text-2xl mb-4 font-medium text-left hover:text-rose-700 dark:hover:text-rose-400 hover:underline cursor-pointer"
+                          x-text="news.title">
+                        </h2>
+                        <p class="text-base text-justify pb-4 cursor-pointer"
+                          x-text="news.description">
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <div class="flex flex-row py-2.5">
-                    <div class="basis-1/6 flex justify-center items-center">
-                      <img class="rounded-full w-10 md:w-16 h-10 md:h-16" src="images/users comments/user-2.jpg" alt="">
-                    </div>
-                    <div class="basis-5/6 flex flex-col justify-center items-start">
-                      <h4 class="text-base font-medium text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
-                        María Teresa de los Moros e Iturbide
-                      </h4>
-                      <p class="ml-5 text-base font-light text-gray-800 dark:text-white text-left selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sit quidem totam quia ex. Eveniet aliquam aut cumque alias repellendus quasi.  
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex flex-row py-2.5">
-                    <div class="basis-1/6 flex justify-center items-center">
-                      <img class="rounded-full w-10 md:w-16 h-10 md:h-16" src="images/users comments/user-3.jpg" alt="">
-                    </div>
-                    <div class="basis-5/6 flex flex-col justify-center items-start">
-                      <h4 class="text-base font-medium text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Carmensa Isabel Santos Esteban
-                      </h4>
-                      <p class="ml-5 text-base font-light text-gray-800 dark:text-white text-left selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto commodi eaque ipsam esse, delectus vel enim quae vero fugit iure! Debitis, rem. Suscipit, sunt dolores? Repudiandae, nihil.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex flex-row py-2.5">
-                    <div class="basis-1/6 flex justify-center items-center">
-                      <img class="rounded-full w-10 md:w-16 h-10 md:h-16" src="images/users comments/user-4.jpg" alt="">
-                    </div>
-                    <div class="basis-5/6 flex flex-col justify-center items-start">
-                      <h4 class="text-base font-medium text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Gonzalo de Jesús Martinez Arrieta
-                      </h4>
-                      <p class="ml-5 text-base font-light text-gray-800 dark:text-white text-left selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio alias reprehenderit maxime.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex flex-row py-2.5">
-                    <div class="basis-1/6 flex justify-center items-center">
-                      <img class="rounded-full w-10 md:w-16 h-10 md:h-16" src="images/users comments/user-5.jpg" alt="">
-                    </div>
-                    <div class="basis-5/6 flex flex-col justify-center items-start">
-                      <h4 class="text-base font-medium text-gray-800 dark:text-white selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Miguel Antonio Dominguez Iguarán
-                      </h4>
-                      <p class="ml-5 text-base font-light text-gray-800 dark:text-white text-left selection:bg-rose-300 dark:selection:bg-rose-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, perspiciatis provident. Aspernatur maiores deleniti vel voluptatum atque? Amet, cupiditate!
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                </a>
               </div>
-            </div>
+            </template>
+          </div>
+          <div class="flex items-center justify-center text-center mt-24">
+            <button class="rounded-l-full px-2 md:px-4 py-1 md:py-2 border-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              Anterior
+            </button>
+            <button class="px-2 md:px-4 py-1 md:py-2 border-y-2 border-r-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              1
+            </button>
+            <button class="px-2 md:px-4 py-1 md:py-2 border-y-2 border-r-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              2
+            </button>
+            <button class="px-2 md:px-4 py-1 md:py-2 border-y-2 border-r-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              3
+            </button>
+            <button class="px-2 md:px-4 py-1 md:py-2 border-y-2 border-r-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              4
+            </button>
+            <button class="px-2 md:px-4 py-1 md:py-2 border-y-2 border-r-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              5
+            </button>
+            <button class="rounded-r-full px-2 md:px-4 py-1 md:py-2 border-y-2 border-r-2 hover:border-0 hover:scale-110 border-gray-600 dark:border-white bg-transparent hover:bg-gradient-to-r from-pink-600 to-rose-900 dark:from-pink-300 dark:to-rose-600 text-gray-600 dark:text-white hover:text-white text-sm md:text-lg font-medium hover:font-bold transition duration-200">
+              Siguiente
+            </button>
+          </div>
         </section>
+        <!-- End of Cuerpo página -->
         <!-- Footer -->
         <footer class="mt-0 md:mt-24">
           <div class="w-full bg-gradient-to-t from-gray-300 dark:from-slate-800 to-transparent px-5 py-7">
@@ -395,7 +307,6 @@
           </div>
         </footer>
         <!-- fin Footer -->
-      </div>
     </div>
   </div>
   <!-- Datos -->
@@ -411,7 +322,42 @@
         logo_modo_nocturno: 'images/logo-BPproject-horizontal-fuente-blanco.svg',
         logo_footer_modo_diurno: 'images/logo-BPproject2x1-fuente-negro.svg',
         logo_footer_modo_nocturno: 'images/logo-BPproject2x1-fuente-blanco.svg',
-        content: '<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eligendi quasi nisi rem aliquid pariatur beatae. Exercitationem ab praesentium quo!</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ullam aliquid voluptates exercitationem. Exercitationem at consequuntur et eius minima minus cupiditate, repellendus, reprehenderit esse magni iusto nihil dignissimos harum natus, laudantium corrupti! Ex, laboriosam labore?</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ea blanditiis quam. Eveniet nulla iure aperiam, reiciendis optio sunt quia molestias hic iste exercitationem.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque doloremque nulla unde ex repellat, sed earum natus illum iure, veritatis, perspiciatis provident aperiam sit omnis nobis ab mollitia consectetur ipsa?</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, minus. Dolore hic enim, dignissimos alias est quasi nihil nisi corporis voluptatum id ratione! Ipsa rerum nulla laudantium neque eveniet impedit perspiciatis architecto, magnam molestias. Tempore doloremque quod explicabo repudiandae natus hic mollitia eaque quidem libero nisi, cum iure! Id.</p>'
+        latest_news: [
+          {
+            image: 'images/noticias/image-1.jpg',
+            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, optio?',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ex minus, vitae commodi enim suscipit cupiditate praesentium odit quaerat at?'
+          },{
+            image: 'images/noticias/image-2.jpg',
+            title: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, dolor.',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime harum illum facere numquam quibusdam eum ab fugiat quis animi quod!'
+          },{
+            image: 'images/noticias/image-3.jpg',
+            title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, mollitia?',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Error saepe sit ullam. Quisquam sint illo fuga quod saepe ea illum.'
+          },{
+            image: 'images/noticias/image-4.jpg',
+            title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, magnam?',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quas illo nisi iusto, libero tempore odio dolore rerum rem voluptatum.'
+          },{
+            image: 'images/noticias/image-5.jpg',
+            title: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae, cum.',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, dolorum obcaecati! Ab natus deserunt, molestias cupiditate unde omnis labore facilis.'
+          },{
+            image: 'images/noticias/image-6.jpg',
+            title: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, eligendi.',
+            description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat rerum adipisci quas praesentium illo assumenda iure consequuntur numquam mollitia iste.'
+          },{
+            image: 'images/noticias/image-7.jpeg',
+            title: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, architecto.',
+            description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit voluptatibus ut temporibus ratione ab porro delectus excepturi fuga nihil ipsa?'
+          },{
+            image: 'images/noticias/image-8.jpg',
+            title: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, veritatis.',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque dignissimos quae labore blanditiis harum distinctio incidunt veniam. Dignissimos, rerum voluptatem.'
+          }
+        ],
+        
       }
     }
   </script>
